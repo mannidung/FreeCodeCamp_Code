@@ -1,12 +1,9 @@
 <!doctype html>
 
-<html lang="en">
+<html>
 <head>
-	<meta charset="utf-8">
 
 	<title>Personal Portfolio</title>
-	<meta name="description" content="The HTML5 Herald">
-	<meta name="author" content="SitePoint">
 	<link rel="stylesheet" href="bootstrap.min.css">
 	<link rel="stylesheet" href="stylesheet.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -15,178 +12,176 @@
 <body>
 	<script src="./jquery-ui.min.js"></script>
 	<script src="./jquery.min.js"></script>
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Pär's Portfolio</a>
-    </div>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Pär's Portfolio</a>
+			</div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact me</a></li>
-        <li><a href="#impressum">Impressum</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#portfolio">Portfolio</a></li>
+					<li><a href="#contact">Contact me</a></li>
+					<li><a href="#impressum">Impressum</a></li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
 
-<section id="header-section">
+	<section id="header-section">
 
-</section>
-<a name="about" =""></a>
-<section id="first-section">
-	<div class="visible-lg row">
-		<div class="col-lg-12">
+	</section>
+	<a name="about"></a>
+	<section id="first-section">
+		<div class="visible-lg col-lg-12 row">
 			<div class="row">
 				<div class="col-lg-1 col-md-2 col-sm-2"></div>
 				<div class="col-lg-3 col-md-4 col-sm-4">
-					<div id="portrait">
-					</div>
+					<br>
+					<br>
+					<img src="img/portrait.png" class="portrait-img" alt="">
 				</div>
 				<div class="col-lg-4 col-md-6 col-sm-12" id="presentation-text">
 					<h2>Welcome</h2>
-					This is me, Pär Persson Mattsson, a hobby web designer.
+					This is me, P&aumlr Persson Mattsson, a support engineer and HPC consultant at a software company during the day, and a student of Free Code Camp during the night.
 					<br><br>
-					On this page you will find links to my web projects. You will also find somehting more.
+					On this page you will find links to my projects, both those done as a part of the Free Code Camp course, and other things that I have done or am currently doing.
+					<br><br>
+					You can find the code of my projects at either github or bitbucket. Right now it is kind of a desert, but it will grow!
 					<br><br>
 					If you have any questions, feel free to get in touch with me on Twitter, LinkedIn, or via mail.
 				</div>
 				<div class="col-lg-2" id="socialmedia-links">
-					<a href="">
+					<br>
+					<br>
+					<br>
+					<a href="https://twitter.com/exilmas" target="new">
 						<div class="socialmedia-button">
 							<i class="fa fa-twitter"></i>
 							Twitter
 						</div>
 					</a>
-					<a href="">
+					<a href="https://de.linkedin.com/in/pär-persson-mattsson-a1726958" target="new">
 						<div class="socialmedia-button">
 							<i class="fa fa-linkedin"></i>
 							LinkedIn
 						</div>
 					</a>
-					<a href="">
+					<a href="https://github.com/mannidung" target="new">
 						<div class="socialmedia-button">
 							<i class="fa fa-github"></i>
 							GitHub
 						</div>
 					</a>
-					<a href="">
+					<a href="https://bitbucket.org/mannidung/" target="new">
 						<div class="socialmedia-button">
 							<i class="fa fa-bitbucket"></i>
 							BitBucket
 						</div>
 					</a>
-					<a href="">
+					<a href="mailto:p.perssonmattsson@gmail.com?Subject=I%20saw%20your%20portfolio!">
 						<div class="socialmedia-button">
 							<i class="fa fa-envelope"></i>
 							Mail
 						</div>
 					</a>  
 				</div>
+				<div class="col-lg-2">
+					
+				</div>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
+	<a name="portfolio"></a>
+	<section>
+		<div class="row" id="project-area-left-aligned">
+			<div class="col-lg-3 project-placeholder">
+				<img src="img/project_portfolio.png" class="project-image">
+			</div>
+			<div class="col-lg-6 project-text">
+				<h2>Personal Porfolio</h2>
+				<h4><i>Description:</i></h4>
+				<i><b>This website!</b></i>
+				<br>
+				It was created with the following goals in mind:
+				<ul>
+					<li>All of the portfolio webpage's content should be accessible by just scrolling.</li>
+					<li>There should be clickable buttons, leading to my different social media pages.</li>
+					<li>There should be thumbnail images of different projects.</li>
+					<li>It should be possible to navigate to different sections through buttons in a navigation bar.</li>
+				</ul>
+				<br><br>
+				<h4><i>Technologies/Libraries used:</i></h4>
+				<i>Javascript, CSS, Bootstrap, Font Awesome</i>
+			</div>
+			<div class="col-lg-3"></div>
+		</div>
+	</section>
 <!--
-<section id="second-section">
-	<div class="container-fluid center">
-		<div class="row" id="project-holder">
-			<div class="col-lg-3 col-md-4 col-sm-6 project-placeholder"></div>
-			<div class="col-lg-3 col-md-4 col-sm-6 project-placeholder"></div>
-			<div class="col-lg-3 col-md-4 col-sm-6 project-placeholder"></div>
-			<div class="col-lg-3 col-md-4 col-sm-6 project-placeholder"></div>
-			<div class="col-lg-3 col-md-4 col-sm-6 project-placeholder"></div>
-			<div class="col-lg-3 col-md-4 col-sm-6 project-placeholder"></div>
-			<div class="col-lg-3 col-md-4 col-sm-6 project-placeholder"></div>
-			<div class="col-lg-3 col-md-4 col-sm-6 project-placeholder"></div>
+	<section>
+		<div class="row" id="project-area-right-aligned">
+			<div class="col-lg-3 col-md-3 col-sm-6"></div>
+			<div class="col-lg-6 col-md-6 col-sm-4 project-text">
+				<h2>Project 2</h2>
+				<h4><i>Description:</i></h4>
+				<i>Destroy the world at all costs, while still managing to drink coffee in the afternoon.</i>
+				<br><br>
+				<h4><i>Technologies used:</i></h4>
+				<i>Javascript, CSS, Doomsday device</i>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-4 project-placeholder">
+
+			</div>
 		</div>
-	</div>
-</section>
+	</section>
+
+	<section>
+		<div class="row" id="project-area-left-aligned">
+			<div class="col-lg-3 col-md-3 col-sm-4 project-placeholder">
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-4 project-text">
+				<h2>Project 3</h2>
+				<h4><i>Description:</i></h4>
+				<i>Saving the world at all costs, while still managing to drink tee in the afternoon.</i>
+				<br><br>
+				<h4><i>Technologies used:</i></h4>
+				<i>Javascript, CSS, Doomsday device</i>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-6"></div>
+		</div>
+	</section>
+
+	<section>
+		<div class="row" id="project-area-right-aligned">
+			<div class="col-lg-3 col-md-3 col-sm-6"></div>
+			<div class="col-lg-6 col-md-6 col-sm-4 project-text">
+				<h2>Project 4</h2>
+				<h4><i>Description:</i></h4>
+				<i>Destroy the world at all costs, while still managing to drink coffee in the afternoon.</i>
+				<br><br>
+				<h4><i>Technologies used:</i></h4>
+				<i>Javascript, CSS, Doomsday device</i>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-4 project-placeholder">
+
+			</div>
+		</div>
+	</section>
 -->
-<a name="portfolio"></a>
-<section>
-<div class="row" id="project-area-left-aligned">
-		<div class="col-lg-3 col-md-3 col-sm-4 project-placeholder">
-			<img src="img/project_portfolio.png" class="project-image">
+	<section id="footer-section">
+		<div class="row">
+			<div class="col-lg-12"></div>
 		</div>
-		<div class="col-lg-6 col-md-6 col-sm-4 project-text">
-			<h2>Personal Porfolio</h2>
-			<h4><i>Description:</i></h4>
-			<i>This website! </i>
-			<br><br>
-			<h4><i>Technologies used:</i></h4>
-			<i>Javascript, CSS, Bootstrap, Font Awesome</i>
-		</div>
-		<div class="col-lg-3 col-md-3 col-sm-6"></div>
-	</div>
-</section>
-
-<section>
-<div class="row" id="project-area-right-aligned">
-		<div class="col-lg-3 col-md-3 col-sm-6"></div>
-		<div class="col-lg-6 col-md-6 col-sm-4 project-text">
-			<h2>Project 2</h2>
-			<h4><i>Description:</i></h4>
-			<i>Destroy the world at all costs, while still managing to drink coffee in the afternoon.</i>
-			<br><br>
-			<h4><i>Technologies used:</i></h4>
-			<i>Javascript, CSS, Doomsday device</i>
-		</div>
-		<div class="col-lg-3 col-md-3 col-sm-4 project-placeholder">
-			
-		</div>
-	</div>
-</section>
-
-<section>
-<div class="row" id="project-area-left-aligned">
-		<div class="col-lg-3 col-md-3 col-sm-4 project-placeholder">
-		</div>
-		<div class="col-lg-6 col-md-6 col-sm-4 project-text">
-			<h2>Project 3</h2>
-			<h4><i>Description:</i></h4>
-			<i>Saving the world at all costs, while still managing to drink tee in the afternoon.</i>
-			<br><br>
-			<h4><i>Technologies used:</i></h4>
-			<i>Javascript, CSS, Doomsday device</i>
-		</div>
-		<div class="col-lg-3 col-md-3 col-sm-6"></div>
-	</div>
-</section>
-
-<section>
-<div class="row" id="project-area-right-aligned">
-		<div class="col-lg-3 col-md-3 col-sm-6"></div>
-		<div class="col-lg-6 col-md-6 col-sm-4 project-text">
-			<h2>Project 4</h2>
-			<h4><i>Description:</i></h4>
-			<i>Destroy the world at all costs, while still managing to drink coffee in the afternoon.</i>
-			<br><br>
-			<h4><i>Technologies used:</i></h4>
-			<i>Javascript, CSS, Doomsday device</i>
-		</div>
-		<div class="col-lg-3 col-md-3 col-sm-4 project-placeholder">
-			
-		</div>
-	</div>
-</section>
-
-<section id="footer-section">
-	<div class="row">
-		<div class="col-lg-12"></div>
-		<div class="col-lg-12"></div>
-	</div>
-</section>
+	</section>
 </body>
 </html>

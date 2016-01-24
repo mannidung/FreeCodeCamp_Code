@@ -1,30 +1,23 @@
-a:hover,
+/* Modifications of standard HTML tags */
+
+body {
+	background-color: #6e7e85;
+}
+
+a:link,
 a:visited,
+a:hover,
 a:active {
 	text-decoration: none;
 }
 
-#presentation-text {
-	color: #3a3042;
-	padding-top: 10px;
-	padding-left: 10px;
+section{
+	max-width: 1400px;
+	margin: auto;
 }
 
-#socialmedia-links{
-	padding-top: 30px;
-}
 
-.socialmedia-button {
-	background-color: white;
-	text-align: center;
-	width: 100px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	margin: 5px;
-	border-color: black;
-	border-style: solid;
-	border-radius: 5px;
-}
+/* Setting up the sections */
 
 #header-section {
 	background-image: url('img/header-background.jpg');
@@ -39,29 +32,19 @@ a:active {
 	padding: 40px;
 	padding-top: 100px;
 }
+
 #second-section {
 	background-color: red;
 	padding-left: 90px; 
 	padding-top: 40px;
 	padding-bottom: 40px;
 }
-#footer-section {
-	background-color: white;
-	height: 50px;
-}
-#portrait {
-	border-color: white;
-	border-style: solid;
-	border-width: 4px;
-	border-radius: 100%;
-	background-color: white;
-	height: 250px;
-	width: 250px;
-	padding-right: 10px;
-}
 
 #project-area-left-aligned {
 	background-color: #68A296;
+	margin-left: 0px; /* WHY DOES THIS NEED TO BE HEEEERE? */
+	margin-right: 0px; /* WHY DOES THIS NEED TO BE HEEEERE? */
+	padding: 40px;
 	padding-left: 100px;
 	padding-right: 10px;
 	padding-top: 100px;
@@ -71,14 +54,59 @@ a:active {
 #project-area-right-aligned {
 	text-align: right;
 	background-color: #FFF5CA;
+	margin-left: 0px; /* WHY DOES THIS NEED TO BE HEEEERE? */
+	margin-right: 0px; /* WHY DOES THIS NEED TO BE HEEEERE? */
 	padding-left: 10px;
 	padding-right: 100px;
 	padding-top: 100px;
 	padding-bottom: 100px;
 }
 
+#footer-section {
+	/* Background color depending on number of projects*/
+	/*background-color: #68A296;*/
+	background-color: #FFF5CA;
+	height: 50px;
+}
+
+/* CSS for presentation part */
+#portrait {
+	border-color: #6e7e85;
+	border-style: solid;
+	border-width: 4px;
+	border-radius: 100%;
+	background-color: #6e7e85;
+	height: 250px;
+	width: 250px;
+	padding-right: 10px;
+}
+
+.portrait-img {
+	border-color: #6e7e85;
+	border-style: solid;
+	border-width: 4px;
+	border-radius: 100%;
+	background-color: #6e7e85;
+	height: 250px;
+	width: 250px;
+}
+
+#presentation-text {
+	color: #3a3042;
+	padding-top: 10px;
+	padding-left: 10px;
+}
+
+/* CSS for project presentation */
+
+.project-text {
+	color: black;
+	padding-left: 80px;
+	padding-right: 80px;
+}
+
 .project-placeholder {
-	background-color: gray;
+	background-color: #6e7e85;
 	height: 250px;
 	width: 250px;
 	margin: 0px;
@@ -89,14 +117,14 @@ a:active {
 }
 
 .project-image {
-	opacity: 0.2;
+	opacity: 0.4;
 	height: 250px;
 	width: 250px;
 	padding: 0px;
 	border-radius: 100%;
 	border-width: 3px;
 	border-style: solid;
-	border-color: gray;
+	border-color: #6e7e85;
 	margin-top: -3px;
 	margin-left: -18px;
 }
@@ -109,21 +137,40 @@ a:active {
 	border-radius: 100%;
 	border-width: 3px;
 	border-style: solid;
-	border-color: gray;
+	border-color: #6e7e85;
 	margin-top: -3px;
 	margin-left: -18px;
 }
 
-.project-text {
-	color: black;
-	padding-left: 80px;
-	padding-right: 80px;
+/* Buttons and things */
+
+.socialmedia-button {
+	background-color: white;
+	text-align: center;
+	width: 100px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin: 5px;
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 5px;
 }
 
-#project-holder {
+.socialmedia-button:hover {
+	color: #FFF5CA;
+	background-color: #6e7e85;
+	text-align: center;
+	width: 100px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin: 5px;
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 5px;
 }
 
-.center {
-	margin: 0 auto;
-	float: none;
+#socialmedia-links{
+	padding-top: 30px;
 }
