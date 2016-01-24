@@ -34,7 +34,7 @@ a:active {
 }
 
 #first-section {
-	background-color: #6b8f71;
+	background-color: #FFF5CA;
 	height: 500px;
 	padding: 40px;
 	padding-top: 100px;
@@ -61,7 +61,7 @@ a:active {
 }
 
 #project-area-left-aligned {
-	background-color: #68D89B;
+	background-color: #68A296;
 	padding-left: 100px;
 	padding-right: 10px;
 	padding-top: 100px;
@@ -70,7 +70,7 @@ a:active {
 
 #project-area-right-aligned {
 	text-align: right;
-	background-color: #7EBDC3;
+	background-color: #FFF5CA;
 	padding-left: 10px;
 	padding-right: 100px;
 	padding-top: 100px;
