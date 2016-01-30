@@ -1,0 +1,59 @@
+body {
+	background-color: #CED0AC;
+}
+
+#quote-section {
+	margin: 0 auto;
+	margin-top: 25px;
+	height: 720px;
+	width: 1080px;
+	background-image: url('img/background.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	padding-top: 300px;
+	box-shadow: inset 0px 0px 20px 40px #CED0AC;
+}
+
+#quote-pad {
+	background-color: gray;
+	opacity: 1;
+	text-align: center;
+	margin: 0 auto;
+	width: 380px;
+	height: 240px;
+	border-radius: 2%;
+}
+
+#quote-text {
+	padding-left: 60px;
+	padding-top: 20px;
+	padding-right: 10px;
+	text-align: left;
+	font-size: 22px;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 200;
+}
+
+#quote-originator {
+	text-align: right;
+	padding-top: 10px;
+	padding-right: 30px;
+	font-size: 18px;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 400;
+}
+
+#twitter-share-button {
+	font-size: 50px;
+	padding-top: 70px;
+	margin-left: -70px;
+}
+
+#new-quote-button {
+	text-align: right;
+	padding-top: 75px;
+	padding-left: 130px;
+	font-size: 30px;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 400;
+}
