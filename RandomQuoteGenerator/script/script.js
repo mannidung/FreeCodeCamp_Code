@@ -26,6 +26,41 @@ $(document).ready(function() {
 			success: function (result) {
 				var resultObject = $.parseJSON(result); // Objectify result
 
+				
+
+				/* animations */
+
+				$("#thought-bubble-1").css('opacity', 0.0);
+				$("#thought-bubble-2").css('opacity', 0.0);
+				$("#thought-bubble-3").css('opacity', 0.0);
+				$("#quote-pad").css('opacity', 0.0);
+
+				$("#thought-bubble-1").animate(
+				{
+					"opacity": 1.0
+				},
+				2000
+				);
+				$("#thought-bubble-2").animate(
+				{
+					"opacity": 1.0
+				},
+				1500
+				);
+				$("#thought-bubble-3").animate(
+				{
+					"opacity": 1.0
+				},
+				1000
+				);
+				$("#quote-pad").animate(
+				{
+					"opacity": 1.0
+				},
+				3000
+				);
+
+				/* replacing the text */
 				var quote = resultObject["quote"];
 				var originator = resultObject["author"];
 
@@ -39,14 +74,14 @@ $(document).ready(function() {
 
 			}
 		})
-	}
+}
 
-	/* THE PART OF THE SCRIPT THAT DOES SOMETHING USEFUL */
-	getQuote();
+/* THE PART OF THE SCRIPT THAT DOES SOMETHING USEFUL */
+getQuote();
 
-	newQuoteButton.click(function () {
-		var queryResult = getQuote();
-		return false;
-	})
+newQuoteButton.click(function () {
+	var queryResult = getQuote();
+	return false;
+})
 })
 
