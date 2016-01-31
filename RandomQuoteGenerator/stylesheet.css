@@ -1,42 +1,55 @@
 body {
-	background-color: #CED0AC;
+	background-color: #000000;
+}
+
+a:link,
+a:visited,
+a:active {
+	color: #4D556B;
+	text-decoration: none;
+}
+
+a:hover{
+	color: #401f3e;
+	text-decoration: none;
 }
 
 #quote-section {
-	margin: 0 auto;
+	/*margin: 0 auto;*/
 	margin-top: 25px;
 	height: 720px;
 	width: 1080px;
 	background-image: url('img/background.jpg');
 	background-repeat: no-repeat;
 	background-position: center;
-	padding-top: 300px;
-	box-shadow: inset 0px 0px 20px 40px #CED0AC;
+	padding-top: 50px;
+	padding-left: 900px;
+	box-shadow: inset 0px 0px 20px 40px #000000;
 }
 
 #quote-pad {
-	background-color: gray;
+	background-color: #FFFFFF;
 	opacity: 1;
 	text-align: center;
-	margin: 0 auto;
 	width: 380px;
 	height: 240px;
 	border-radius: 2%;
 }
 
-#quote-text {
+#quote-text-box {
 	padding-left: 60px;
 	padding-top: 20px;
 	padding-right: 10px;
+	height: 75px;
 	text-align: left;
 	font-size: 22px;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 200;
 }
 
-#quote-originator {
+#quote-originator-box {
 	text-align: right;
-	padding-top: 10px;
+	padding-top: 70px;
 	padding-right: 30px;
 	font-size: 18px;
 	font-family: 'Source Sans Pro', sans-serif;
@@ -45,15 +58,28 @@ body {
 
 #twitter-share-button {
 	font-size: 50px;
-	padding-top: 70px;
+	padding-top: 5px;
 	margin-left: -70px;
 }
 
-#new-quote-button {
+#new-quote-button-box {
 	text-align: right;
-	padding-top: 75px;
+	padding-top: 15px;
 	padding-left: 130px;
 	font-size: 30px;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 400;
+}
+
+#quote-text {
+	font-style: italic;
+}
+
+#thought-bubble-1 {
+	height: 75px;
+	width: 75px;
+	padding-right: 10px;
+	position: 10px;
+	background-color: white;
+	border-radius: 100%;
 }
