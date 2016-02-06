@@ -1,0 +1,96 @@
+.changertext {
+	margin-top: 35px;
+	margin-left: 5px;
+	text-align: center;
+	font-size: 30px;
+	font-weight: 300;
+	font-family: 'Lato', sans-serif;
+}
+.changersymbol {
+	font-size: 30px;
+}
+.changertime {
+	font-size: 20px;
+}
+.timertime {
+	font-size: 28px;
+	font-weight: 100;
+}
+
+#mainframe {
+	margin: 50 auto;
+	width: 375px;
+	height: 500px;
+}
+
+#changerrow {
+	margin: 0 auto;
+}
+
+#timechanger {
+	width: 125px;
+	height: 125px;
+	margin: 0px;
+	border-radius: 100%;
+	border-width: 1px;
+	border-style: solid;
+	border-color: gray;
+}
+
+#changerrowspacer {
+	width: 125px;
+	height: 125px;
+	margin: 0px;
+}
+
+#breakchanger {
+	width: 125px;
+	height: 125px;
+	margin: 0px;
+	border-radius: 100%;
+	border-width: 1px;
+	border-style: solid;
+	border-color: gray;
+}
+
+#timerrow {
+}
+
+#timer {
+	height: 250px;
+	width: 250px;
+	margin: 0 auto;
+	border-radius: 100%;
+	border-width: 1px;
+	border-style: solid;
+	border-color: gray;
+
+	text-align: center;
+}
+
+#timertextcontainer {
+	margin-top: 80px;
+}
+
+#timertext {
+	font-size: 40px;
+	font-weight: 100;
+}
+
+#progressbarrow {
+	margin-top: 30px;
+}
+
+#progressbar {
+	background-image: url('img/mario_bg.gif');
+	height: 50px;
+	width: 300px;
+	margin: 0 auto;
+}
+
+#runner {
+	background-image: url('img/mario-repeat.gif');
+	height: 50px;
+	width: 50px;
+	margin-left: 0px;
+}

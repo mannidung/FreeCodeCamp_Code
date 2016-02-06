@@ -1,0 +1,88 @@
+<html>
+<head>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+
+
+	<link href='https://fonts.googleapis.com/css?family=Lato:300,100' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="stylesheet.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<title>A cat that thinks about quotes</title>
+</head>
+
+<body>
+	<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<div class="container-fluid">
+		<div id="mainframe">
+			<div id="changerrow">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<table>
+							<tr>
+								<td>
+									<div id="timechanger">
+										<div class="changertext">
+											<span>&ndash;</span>
+											<span class="changersymbol"><i class="fa fa-hourglass-half"></i></span>
+											<span>+</span>
+											<br>
+											<span class="changertime"><span id="timecounter">25</span> min</span>
+										</div>
+									</div>
+								</td>
+								<td>
+									<div id="changerrowspacer"></div>
+								</td>
+								<td>
+									<div id="breakchanger">
+										<div class="changertext">
+											<span>&ndash;</span>
+											<span class="changersymbol"><i class="fa fa-coffee"></i></span>
+											<span>+</span>
+											<br>
+											<span class="changertime"><span id="breakcounter">5</span> min</span>
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div id="timerrow">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div id="timer">
+						<div id="timertextcontainer">
+							<span id="timertext">
+								START
+							</span>
+							<br>
+							<span class="timertime"><span id="timercounter">25</span> min</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="progressbarrow">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div id="progressbar">
+						<div id="runner">
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+</body>
+<script type="text/javascript" src="script/script.js"></script>
+</html>
