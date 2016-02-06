@@ -103,14 +103,14 @@ $(document).ready(function() {
 				} else{
 					clearInterval(timer);
 
-					var audio = new Audio('audio/gong.wav');
+					var audio = new Audio('https://s3.eu-central-1.amazonaws.com/parperssonmattsson-freecodecamp-assets/pomodoro/audio/gong.mp3');
 					audio.play();
 
 					pomodoroStringMinutes.text(breakValue);
 					pomodoroStringSeconds.text(0);
 					pomodoroStart.text("START BREAK");
 
-					progressbarRunner.css("background-image", "url('img/stickman-rest.jpg')");
+					progressbarRunner.css("background-image", "url('https://s3.eu-central-1.amazonaws.com/parperssonmattsson-freecodecamp-assets/pomodoro/img/stickman-rest.jpg')");
 
 					pomodoroWork = false;
 
@@ -147,14 +147,14 @@ $(document).ready(function() {
 				} else{
 					clearInterval(timer);
 
-					var audio = new Audio('audio/gong.wav');
+					var audio = new Audio('https://s3.eu-central-1.amazonaws.com/parperssonmattsson-freecodecamp-assets/pomodoro/audio/gong.mp3');
 					audio.play();
 
 					pomodoroStringMinutes.text(timeValue);
 					pomodoroStringSeconds.text(0);
 					pomodoroStart.text("START WORK");
 
-					progressbarRunner.css("background-image", "url('img/stickman-repeat.gif')");
+					progressbarRunner.css("background-image", "url('https://s3.eu-central-1.amazonaws.com/parperssonmattsson-freecodecamp-assets/pomodoro/img/stickman-repeat.gif')");
 
 					pomodoroWork = true;
 				};
