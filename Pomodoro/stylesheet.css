@@ -12,7 +12,7 @@
 .changertime {
 	font-size: 20px;
 }
-.timertime {
+.pomodorotime {
 	font-size: 28px;
 	font-weight: 100;
 }
@@ -72,7 +72,7 @@
 	margin-top: 80px;
 }
 
-#timertext {
+#pomodorotext {
 	font-size: 40px;
 	font-weight: 100;
 }
@@ -82,14 +82,14 @@
 }
 
 #progressbar {
-	background-image: url('img/mario_bg.gif');
-	height: 50px;
+	background-image: url('img/stickman-bg.gif');
+	height: 80px;
 	width: 300px;
 	margin: 0 auto;
 }
 
 #runner {
-	background-image: url('img/mario-repeat.gif');
+	background-image: url('img/stickman-repeat.gif');
 	height: 50px;
 	width: 50px;
 	margin-left: 0px;
