@@ -1,0 +1,24 @@
+.calculator-body {
+	margin: 50 auto;
+	height: 320;
+	width: 240;
+	background-color: red;
+	border-radius: 10%
+}
+
+.calculator-header {
+	padding-top: 10px;
+	padding-left: 15px;
+	height: 40px;
+}
+
+.calculator-window	{
+	margin-top: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#brand {
+	font-size: 18px;
+	font-family: 'Bevan', cursive;
+}
