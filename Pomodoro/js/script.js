@@ -6,7 +6,8 @@ $(document).ready(function() {
 	var breakMinus = $("#break_minus");
 	var breakPlus = $("#break_plus");
 	var pomodoroStart = $("#pomodorotext");
-	
+	var resetButton = $("#resetbutton");
+
 	/* Strings */
 	var timeString = $("#timecounter");
 	var breakString = $("#breakcounter");
@@ -19,146 +20,162 @@ $(document).ready(function() {
 
 	var timer;
 	var pomodoroWork = true;
+	var running = false;
 
 	/* Initiate strings for the first time */
-	var timeValue = 25; // standard working session time
-	var breakValue = 5; // standard pause time
+  var timeValue = 25; // standard working session time
+  var breakValue = 5; // standard pause time
 
-	var timerMinutes = timeValue;
-	var timerSeconds = 0;
-	var runnerCounter = 0;
-	var runningLength = 210; // length of the progress bar
-	var runnerStepInterval = 1;
+  var timerMinutes = timeValue;
+  var timerSeconds = 0;
+  var runnerCounter = 0;
+  var runningLength = 210; // length of the progress bar
+  var runnerStepInterval = 1;
 
-	timeString.text(timeValue);
-	breakString.text(breakValue);
+  timeString.text(timeValue);
+  breakString.text(breakValue);
 
-	/* Adjust strings with plus and minus */
-	timeMinus.click(function() {
-		if (timeValue > 1) {
-			timeValue -= 1;
-			timeString.text(timeValue);
-			if (pomodoroWork) {
-				pomodoroStringMinutes.text(timeValue);
-			};
-		};
-	});
+  /* Adjust strings with plus and minus */
+  timeMinus.click(function() {
+  	if (timeValue > 1) {
+  		timeValue -= 1;
+  		timeString.text(timeValue);
+  		if (pomodoroWork && running == false) {
+  			pomodoroStringMinutes.text(timeValue);
+  		};
+  	};
+  });
 
-	timePlus.click(function() {
-		timeValue += 1;
-		timeString.text(timeValue);
-		if (pomodoroWork) {
-			pomodoroStringMinutes.text(timeValue);
-		};
-	});
+  timePlus.click(function() {
+  	timeValue += 1;
+  	timeString.text(timeValue);
+  	if (pomodoroWork && running == false) {
+  		pomodoroStringMinutes.text(timeValue);
+  	};
+  });
 
-	breakMinus.click(function() {
-		if (breakValue > 1) {
-			breakValue -= 1;
-			breakString.text(breakValue);
-			if (pomodoroWork == false) {
-				pomodoroStringMinutes.text(breakValue);
-			};
-		};
-	});
+  breakMinus.click(function() {
+  	if (breakValue > 1) {
+  		breakValue -= 1;
+  		breakString.text(breakValue);
+  		if (pomodoroWork == false && running == false) {
+  			pomodoroStringMinutes.text(breakValue);
+  		};
+  	};
+  });
 
-	breakPlus.click(function() {
-		breakValue += 1;
-		breakString.text(breakValue);
-		if (pomodoroWork == false) {
-			pomodoroStringMinutes.text(breakValue);
-		};
-	});
+  breakPlus.click(function() {
+  	breakValue += 1;
+  	breakString.text(breakValue);
+  	if (pomodoroWork == false && running == false) {
+  		pomodoroStringMinutes.text(breakValue);
+  	};
+  });
 
-	/* When clicking start */
-	pomodoroStart.click(function() {
-		if (pomodoroWork) {
-			pomodoroStart.text("");
+  resetButton.click(function() {
+  	clearInterval(timer);
+  	timeString.text(timeValue);
+  	breakString.text(breakValue);
+  	pomodoroStringMinutes.text(timeValue);
+  	pomodoroStringSeconds.text("0");
+  	progressbarRunner.stop();
+  	progressbarRunner.css("background-image", "url('https://s3.eu-central-1.amazonaws.com/parperssonmattsson-freecodecamp-assets/pomodoro/img/stickman-repeat.gif')");
+  	progressbarRunner.css("margin-left", "0px");
+  	pomodoroStart.text("START WORK");
+  	running = false;
+  });
 
-			timerMinutes = timeValue;
-			timerSeconds = 0;
+  /* When clicking start */
+  pomodoroStart.click(function() {
+  	if (pomodoroWork) {
 
-			runnerStepInterval = Math.ceil((timerMinutes*60)/runningLength);
+  		running = true;
+  		pomodoroStart.text("");
 
-			// Animate runner
-			progressbarRunner.animate({
-				"margin-left": runningLength
-			},
-			timerMinutes*60*1000);
+  		timerMinutes = timeValue;
+  		timerSeconds = 0;
 
-			// Start timer
-			timer = setInterval(function() {
-				if (timerMinutes >= 0) {
-					if (timerSeconds === 0) {
-						timerSeconds = 59
-						timerMinutes -= 1
-						if (timerMinutes >= 0) {
-							pomodoroStringMinutes.text(timerMinutes);
-							pomodoroStringSeconds.text(timerSeconds);
-						};
-					} else{
-						timerSeconds -= 1;
-						pomodoroStringSeconds.text(timerSeconds);
-					};
-				} else{
-					clearInterval(timer);
+      // Animate runner
+      progressbarRunner.animate({
+      	"margin-left": runningLength
+      },
+      timerMinutes * 60 * 1000);
 
-					var audio = new Audio('https://s3.eu-central-1.amazonaws.com/parperssonmattsson-freecodecamp-assets/pomodoro/audio/gong.mp3');
-					audio.play();
+      // Start timer
+      timer = setInterval(function() {
+      	if (timerMinutes >= 0) {
+      		if (timerSeconds === 0) {
+      			timerSeconds = 59
+      			timerMinutes -= 1
+      			if (timerMinutes >= 0) {
+      				pomodoroStringMinutes.text(timerMinutes);
+      				pomodoroStringSeconds.text(timerSeconds);
+      			};
+      		} else {
+      			timerSeconds -= 1;
+      			pomodoroStringSeconds.text(timerSeconds);
+      		};
+      	} else {
+      		clearInterval(timer);
+      		running = false;
 
-					pomodoroStringMinutes.text(breakValue);
-					pomodoroStringSeconds.text(0);
-					pomodoroStart.text("START BREAK");
+      		var audio = new Audio('https://s3.eu-central-1.amazonaws.com/parperssonmattsson-freecodecamp-assets/pomodoro/audio/gong.mp3');
+      		audio.play();
 
-					progressbarRunner.css("background-image", "url('https://s3.eu-central-1.amazonaws.com/parperssonmattsson-freecodecamp-assets/pomodoro/img/stickman-rest.jpg')");
+      		pomodoroStringMinutes.text(breakValue);
+      		pomodoroStringSeconds.text(0);
+      		pomodoroStart.text("START BREAK");
 
-					pomodoroWork = false;
+      		progressbarRunner.css("background-image", "url('https://s3.eu-central-1.amazonaws.com/parperssonmattsson-freecodecamp-assets/pomodoro/img/stickman-rest.jpg')");
 
-				};
-			}, 1000);
-		} else{
-			pomodoroStart.text("");
+      		pomodoroWork = false;
 
-			timerMinutes = breakValue;
-			timerSeconds = 0;
+      	};
+      }, 1000);
+  } else {
 
-			runnerStepInterval = Math.ceil((timerMinutes*60)/runningLength);
-			
-			// Animate runner
-			progressbarRunner.animate({
-				"margin-left": 0
-			},
-			timerMinutes*60*1000);
+  	running = true;
+  	pomodoroStart.text("");
 
-			// Start timer
-			timer = setInterval(function() {
-				if (timerMinutes >= 0) {
-					if (timerSeconds === 0) {
-						timerSeconds = 59
-						timerMinutes -= 1
-						if (timerMinutes >= 0) {
-							pomodoroStringMinutes.text(timerMinutes);
-							pomodoroStringSeconds.text(timerSeconds);
-						};
-					} else{
-						timerSeconds -= 1;
-						pomodoroStringSeconds.text(timerSeconds);
-					};
-				} else{
-					clearInterval(timer);
+  	timerMinutes = breakValue;
+  	timerSeconds = 0;
 
-					var audio = new Audio('https://s3.eu-central-1.amazonaws.com/parperssonmattsson-freecodecamp-assets/pomodoro/audio/gong.mp3');
-					audio.play();
+      // Animate runner
+      progressbarRunner.animate({
+      	"margin-left": 0
+      },
+      timerMinutes * 60 * 1000);
 
-					pomodoroStringMinutes.text(timeValue);
-					pomodoroStringSeconds.text(0);
-					pomodoroStart.text("START WORK");
+      // Start timer
+      timer = setInterval(function() {
+      	if (timerMinutes >= 0) {
+      		if (timerSeconds === 0) {
+      			timerSeconds = 59
+      			timerMinutes -= 1
+      			if (timerMinutes >= 0) {
+      				pomodoroStringMinutes.text(timerMinutes);
+      				pomodoroStringSeconds.text(timerSeconds);
+      			};
+      		} else {
+      			timerSeconds -= 1;
+      			pomodoroStringSeconds.text(timerSeconds);
+      		};
+      	} else {
+      		running = false;
+      		clearInterval(timer);
 
-					progressbarRunner.css("background-image", "url('https://s3.eu-central-1.amazonaws.com/parperssonmattsson-freecodecamp-assets/pomodoro/img/stickman-repeat.gif')");
+      		var audio = new Audio('https://s3.eu-central-1.amazonaws.com/parperssonmattsson-freecodecamp-assets/pomodoro/audio/gong.mp3');
+      		audio.play();
 
-					pomodoroWork = true;
-				};
-			}, 1000);
-		};
-	});
+      		pomodoroStringMinutes.text(timeValue);
+      		pomodoroStringSeconds.text(0);
+      		pomodoroStart.text("START WORK");
+
+      		progressbarRunner.css("background-image", "url('https://s3.eu-central-1.amazonaws.com/parperssonmattsson-freecodecamp-assets/pomodoro/img/stickman-repeat.gif')");
+
+      		pomodoroWork = true;
+      	};
+      }, 1000);
+  };
+});
 });

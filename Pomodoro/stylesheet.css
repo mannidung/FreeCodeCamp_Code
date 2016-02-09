@@ -106,3 +106,9 @@ a:active {
 	width: 50px;
 	margin-left: 0px;
 }
+
+#resetbutton {
+	font-size: 36px;
+	text-align: center;
+	font-weight: 100;
+}
