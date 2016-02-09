@@ -1,5 +1,5 @@
 .calculator-body {
-	margin: 50 auto;
+	margin: 50 0 0 10;
 	height: 320;
 	width: 240;
 	background-color: red;
@@ -16,6 +16,28 @@
 	margin-top: 10px;
 	padding-top: 5px;
 	padding-bottom: 5px;
+}
+
+.button-row {
+	background-color: green;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	height: 23px;
+}
+
+.button-area {
+	background-color: blue;
+	margin-top: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.calculator-button {
+	background-color: white;
+	margin: 0 auto;
+	height: 25px;
+	width: 25px;
 }
 
 #brand {
