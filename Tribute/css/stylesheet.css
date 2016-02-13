@@ -1,0 +1,52 @@
+a {
+	text-decoration: none;
+	font-weight: bold;
+}
+
+#main {
+	margin: 20px auto;
+	background-color: #d0cdd7;
+	width: 600px;
+	height: 700px;
+	padding-top: 10px;
+	border-radius: 1%;
+}
+
+#header {
+	text-align: center;
+	font-size: 42px;
+	margin-bottom: 10px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+}
+
+#image {
+	background-image: url('http://parperssonmattsson-personal-homepage.s3-website.eu-central-1.amazonaws.com/fcc/Tribute/img/Hilbert_Portrait.jpg');
+	background-size: 100%;
+	margin: 0 auto;
+	width: 200px;
+	height: 264px;
+	border-radius: 2%;
+	border-style: solid;
+	border-width: 1px;
+	border-color: gray;
+}
+
+#biography {
+	height: 160px;
+	margin: 30px;
+	border-radius: 1%
+}
+
+#more_info {
+	height: 60px;
+	margin: 30px;
+	border-radius: 1%;
+}
+
+.text {
+	padding-top: 10px;
+	margin: 10px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+}
