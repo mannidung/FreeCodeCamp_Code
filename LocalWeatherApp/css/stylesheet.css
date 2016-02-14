@@ -1,5 +1,5 @@
 body {
-	background-color:  rgb(255, 165, 0);
+	background-color:  white;
 	font-family: 'Roboto', sans-serif;
 	color: gray;
 }
@@ -15,7 +15,7 @@ a {
 	position:absolute;
 	overflow: hidden;
 	width:100%;
-	background-color:  rgb(255, 165, 0);
+	background-color:  white;
 }
 
 .centered-helper {
@@ -94,37 +94,63 @@ a {
 	font-style: normal;
 }
 
-/* -----Sun----- */
+
+
+/* iconvault stuff */
+
+.icon-basecloud::before {
+	font-family: 'iconvault';
+	content: "\f105";
+	color: rgb(204, 204, 204);
+	font-size: 256px;
+}
 
 .icon-sun::after {
 	font-family: 'iconvault';
+	font-size: 256px;
 	content: "\f113";
 	color: rgb(255, 165, 0);
-	font-weight: 100;
 }
 
-/* -----BaseCloud----- */
-
-.basecloud {
+.icon-cloud::after {
 	font-family: 'iconvault';
-	font-size:6em;
-	content: '\f105';
-	position:absolute;
+	font-size: 256px;
+	content: '\f106';
 	color: rgb(204, 204, 204);
 }
 
-/* -----Showers----- */
-
-.icon-showers::before  {
+.icon-showers::after  {
+	font-family: 'iconvault';
+	font-size: 256px;
 	content: "\f104";
-	position:absolute;
 	color:#82b2e4;
+	position: absolute;
+	margin-left: -250px;
 }
 
-/* -----Sunny----- */
-
-.icon-sunny::after {
-	content: "\f101";
-	color: rgb(255, 165, 0);
+.icon-rainy::after  {
+	font-family: 'iconvault';
+	font-size: 256px;
+	content: "\f107";
+	color:#82b2e4;
 	position: absolute;
+	margin-left: -250px;
+}
+
+.icon-snowy::after  {
+	font-family: 'iconvault';
+	font-size: 256px;
+	content: "\f10b";
+	color:rgb(204, 204, 204);
+	position: absolute;
+	margin-left: -250px;
+}
+
+.icon-thunder::after  {
+	font-family: 'iconvault';
+	font-size: 256px;
+	content: "\f114";
+	color:rgb(255, 165, 0);
+	position: absolute;
+	margin-left: -250px;
 }
