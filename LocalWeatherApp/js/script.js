@@ -37,7 +37,6 @@ $(document).ready(function() {
 				function(json) {
 					place = json["name"];
 					weather = json["weather"][0]["main"];
-					weather = "Clear"
 					tempK = json["main"]["temp"];
 					tempC = kelvinToCelsius(tempK);
 					tempF = kelvinToFahrenheit(tempK);
