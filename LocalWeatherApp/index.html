@@ -3,12 +3,44 @@
 	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 	<meta content="utf-8" http-equiv="encoding">
 
-	<link rel="stylesheet" href="css/stylesheet.css">
 	<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/iconvault/css/base.css">
+	<link rel="stylesheet" href="css/iconvault/css/skeleton.css">
+	<link rel="stylesheet" href="css/stylesheet.css">
+
 	<title>Weather in var=YOUR_CITY</title>
 </head>
 
 <body>
-
+	<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+	<div class="container">
+		<div class="centered-helper">
+			<div class="content">
+				<div class="city-content">
+					<span id="city">GÖTTINGEN</span>
+				</div>
+				<div class="weather-content">
+					<div class="icon-sun" id="weather-icon"></div>
+					<div id="weather-text">
+						<span>Rainy, 32 &deg;C</span>
+					</div>
+				</div>
+				<div class="unit-button-content">
+					<div id="unit-button">
+						&deg;F
+					</div>
+				</div>
+				<br>
+				<div class="credit">
+					Icons from <a href="http://forecastfont.iconvau.lt/">Iconvault's Forecast Front</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 </body>
+<!--
+<script src="js/script.js"></script>
+-->
 </html>

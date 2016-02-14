@@ -1,0 +1,130 @@
+body {
+	background-color:  rgb(255, 165, 0);
+	font-family: 'Roboto', sans-serif;
+	color: gray;
+}
+
+a {
+	text-decoration: none;
+	color: gray;
+}
+
+.container {
+	display: table;
+	height: 100%;
+	position:absolute;
+	overflow: hidden;
+	width:100%;
+	background-color:  rgb(255, 165, 0);
+}
+
+.centered-helper {
+	#position: absolute;
+	#top: 50%;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.content {
+	#position: relative;
+	#top: -50%;
+	margin:0 auto;
+	padding: 20px;
+	width:360px;
+	height: 400px;
+	border-radius: 5%;
+	background-color: white;
+}
+
+.city-content {
+	width: 100%;
+	text-align: center;
+}
+
+.weather-content {
+	width: 100%;
+	text-align: center;
+}
+
+.weather-text {
+	text-align: center;
+}
+
+.unit-button-content {
+	margin-top: 20px;
+	width: 100%;
+}
+
+.credit {
+	font-size: 8px;
+}
+
+#city {
+	font-size: 32px;
+}
+
+#weather-icon {
+	font-size: 256px;
+}
+
+#unit-button {
+	text-align: center;
+	vertical-align: middle;
+	font-size: 12px;
+	color: gray;
+	margin: 0 auto;
+	width: 20px;
+	background-color: white;
+	border-radius: 10%;
+	border-style: solid;
+	border-width: 1px;
+	border-color: gray;
+}
+
+/* ForecastFront Icons */
+
+@font-face {
+	font-family: "iconvault";
+	src: url("iconvault/iconvault_forecastfont.eot");
+	src: url("iconvault/iconvault_forecastfont.eot?#iefix") format("embedded-opentype"),
+	url("iconvault/iconvault_forecastfont.woff") format("woff"),
+	url("iconvault/iconvault_forecastfont.ttf") format("truetype"),
+	url("iconvault/iconvault_forecastfont.svg#iconvault") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* -----Sun----- */
+
+.icon-sun::after {
+	font-family: 'iconvault';
+	content: "\f113";
+	color: rgb(255, 165, 0);
+	font-weight: 100;
+}
+
+/* -----BaseCloud----- */
+
+.basecloud {
+	font-family: 'iconvault';
+	font-size:6em;
+	content: '\f105';
+	position:absolute;
+	color: rgb(204, 204, 204);
+}
+
+/* -----Showers----- */
+
+.icon-showers::before  {
+	content: "\f104";
+	position:absolute;
+	color:#82b2e4;
+}
+
+/* -----Sunny----- */
+
+.icon-sunny::after {
+	content: "\f101";
+	color: rgb(255, 165, 0);
+	position: absolute;
+}
