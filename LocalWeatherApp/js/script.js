@@ -45,6 +45,7 @@ $(document).ready(function() {
 			var weatherIconDiv = $("#weather-icon");
 			var body = $("body");
 			var container = $(".container");
+			var unitButton = $("#unit-button");
 
 			switch (weather) {
 				case "Thunderstorms":
@@ -55,6 +56,10 @@ $(document).ready(function() {
 				container.animate({
 					backgroundColor: "rgb(204, 204, 204)"},
 					3000);
+				unitButton.animate({
+					backgroundColor: "rgb(204, 204, 204)"},
+					3000);
+
 				break;
 				case "Drizzle":
 				weatherIconDiv.html("<ul><li class='icon-basecloud icon-showers'></li></ul>");
@@ -62,6 +67,9 @@ $(document).ready(function() {
 					backgroundColor: "#82b2e4"},
 					3000);
 				container.animate({
+					backgroundColor: "#82b2e4"},
+					3000);
+				unitButton.animate({
 					backgroundColor: "#82b2e4"},
 					3000);
 				break;
@@ -73,6 +81,9 @@ $(document).ready(function() {
 				container.animate({
 					backgroundColor: "#82b2e4"},
 					3000);
+				unitButton.animate({
+					backgroundColor: "#82b2e4"},
+					3000);
 				break;
 				case "Snow":
 				weatherIconDiv.html("<ul><li class='icon-basecloud icon-snowy'></li></ul>");
@@ -80,6 +91,9 @@ $(document).ready(function() {
 					backgroundColor: "rgb(204, 204, 204)"},
 					3000);
 				container.animate({
+					backgroundColor: "rgb(204, 204, 204)"},
+					3000);
+				unitButton.animate({
 					backgroundColor: "rgb(204, 204, 204)"},
 					3000);
 				break;
@@ -91,6 +105,9 @@ $(document).ready(function() {
 				container.animate({
 					backgroundColor: "rgb(255, 165, 0)"},
 					3000);
+				unitButton.animate({
+					backgroundColor: "rgb(255, 165, 0)"},
+					3000);
 				break;
 				case "Clouds":
 				weatherIconDiv.html("<ul><li class='icon-cloud'></li></ul>");
@@ -98,6 +115,9 @@ $(document).ready(function() {
 					backgroundColor: "rgb(204, 204, 204)"},
 					3000);
 				container.animate({
+					backgroundColor: "rgb(204, 204, 204)"},
+					3000);
+				unitButton.animate({
 					backgroundColor: "rgb(204, 204, 204)"},
 					3000);
 				break;
@@ -124,7 +144,7 @@ $(document).ready(function() {
 
 	// City buttons
 	$("#berlin").click(function(event) {
-		setWeatherFromPosition(52.52, 13.38);
+		setWeatherFromPosition(52.52, 13.41);
 	});
 
 	$("#abudhabi").click(function(event) {
@@ -132,15 +152,15 @@ $(document).ready(function() {
 	});
 
 	$("#sydney").click(function(event) {
-		setWeatherFromPosition(33.86, 151.21);
+		setWeatherFromPosition(-33.86, 151.21);
 	});
 
 	$("#lima").click(function(event) {
-		setWeatherFromPosition(12.04, 77.02);
+		setWeatherFromPosition(-12.04, -77.02);
 	});
 
 	$("#newyork").click(function(event) {
-		setWeatherFromPosition(40.71, 74.01);
+		setWeatherFromPosition(40.71, -74.01);
 	});
 
 	// Change the unit
