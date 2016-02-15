@@ -31,7 +31,7 @@ a {
 	margin:0 auto;
 	padding: 20px;
 	width:360px;
-	height: 400px;
+	height: 435px;
 	border-radius: 5%;
 	background-color: white;
 }
@@ -73,12 +73,20 @@ a {
 	font-size: 12px;
 	color: gray;
 	margin: 0 auto;
-	width: 20px;
-	background-color: white;
+	width: 40px;
+	background-color: rgb(204, 204, 204);
 	border-radius: 10%;
-	border-style: solid;
-	border-width: 1px;
-	border-color: gray;
+}
+
+#unit-button:hover {
+	text-align: center;
+	vertical-align: middle;
+	font-size: 12px;
+	color: black;
+	margin: 0 auto;
+	width: 40px;
+	background-color: rgb(125, 125, 125);
+	border-radius: 10%;
 }
 
 /* ForecastFront Icons */

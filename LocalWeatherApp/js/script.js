@@ -22,29 +22,24 @@ $(document).ready(function() {
 
 	var OWM_API_ID = "12f8689c16ff0fa4b67e11ae4fd55fc1";
 
-	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(function(position) {
-			latitude = position.coords.latitude;
-			longitude = position.coords.longitude;
-			$("#latitude").text(position.coords.latitude);
-			$("#longitude").text(position.coords.longitude);
+	var setWeatherFromPosition = function(latitude, longitude) {
+		$.getJSON("http://api.openweathermap.org/data/2.5/weather?"
+			+ "lat=" + latitude
+			+ "&lon=" + longitude
+			+ "&APPID=" + OWM_API_ID,
+			function(json) {
+				place = json["name"];
+				weather = json["weather"][0]["main"];
+				tempK = json["main"]["temp"];
+				tempC = kelvinToCelsius(tempK);
+				tempF = kelvinToFahrenheit(tempK);
 
-			
-			$.getJSON("http://api.openweathermap.org/data/2.5/weather?"
-				+ "lat=" + latitude
-				+ "&lon=" + longitude
-				+ "&APPID=" + OWM_API_ID,
-				function(json) {
-					place = json["name"];
-					weather = json["weather"][0]["main"];
-					tempK = json["main"]["temp"];
-					tempC = kelvinToCelsius(tempK);
-					tempF = kelvinToFahrenheit(tempK);
+				$("#city").text(place.toUpperCase());
+				$("#weather-condition").text(weather);
+				$("#weather-temperature").text(tempC);
+				$("#weather-temperature-unit").text("C");
+				$('title').text("Weather in " + place);
 
-					$("#city").text(place.toUpperCase());
-					$("#weather-condition").text(weather);
-					$("#weather-temperature").text(tempC);
-					$("#weather-temperature-unit").text("C");
 
 			// Change the weather icon
 			var weatherIconDiv = $("#weather-icon");
@@ -56,55 +51,55 @@ $(document).ready(function() {
 				weatherIconDiv.html("<ul><li class='icon-basecloud icon-thunder'></li></ul>");
 				body.animate({
 					backgroundColor: "rgb(204, 204, 204)"},
-					5000);
+					3000);
 				container.animate({
 					backgroundColor: "rgb(204, 204, 204)"},
-					5000);
+					3000);
 				break;
 				case "Drizzle":
 				weatherIconDiv.html("<ul><li class='icon-basecloud icon-showers'></li></ul>");
 				body.animate({
 					backgroundColor: "#82b2e4"},
-					5000);
+					3000);
 				container.animate({
 					backgroundColor: "#82b2e4"},
-					5000);
+					3000);
 				break;
 				case "Rain":
 				weatherIconDiv.html("<ul><li class='icon-basecloud icon-rainy'></li></ul>");
 				body.animate({
 					backgroundColor: "#82b2e4"},
-					5000);
+					3000);
 				container.animate({
 					backgroundColor: "#82b2e4"},
-					5000);
+					3000);
 				break;
 				case "Snow":
 				weatherIconDiv.html("<ul><li class='icon-basecloud icon-snowy'></li></ul>");
 				body.animate({
 					backgroundColor: "rgb(204, 204, 204)"},
-					5000);
+					3000);
 				container.animate({
 					backgroundColor: "rgb(204, 204, 204)"},
-					5000);
+					3000);
 				break;
 				case "Clear":
 				weatherIconDiv.html("<ul><li class='icon-sun'></li></ul>");
 				body.animate({
 					backgroundColor: "rgb(255, 165, 0)"},
-					5000);
+					3000);
 				container.animate({
 					backgroundColor: "rgb(255, 165, 0)"},
-					5000);
+					3000);
 				break;
 				case "Clouds":
 				weatherIconDiv.html("<ul><li class='icon-cloud'></li></ul>");
 				body.animate({
 					backgroundColor: "rgb(204, 204, 204)"},
-					5000);
+					3000);
 				container.animate({
 					backgroundColor: "rgb(204, 204, 204)"},
-					5000);
+					3000);
 				break;
 				default:
 					// statements_def
@@ -112,28 +107,55 @@ $(document).ready(function() {
 				}
 			}
 			);
-			
+	}
 
-			
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(function(position) {
+			latitude = position.coords.latitude;
+			longitude = position.coords.longitude;
+			$("#latitude").text(position.coords.latitude);
+			$("#longitude").text(position.coords.longitude);
 
-			// Change the unit
-			$("#unit-button").click(function(event) {
-				if (isCelciusActive) {
-					isCelciusActive = false;
-					$("#weather-temperature").text(tempF);
-					$("#weather-temperature-unit").text("F");
-					$("#button-temperature-unit").text("C");
-				} else {
-					isCelciusActive = true;
-					$("#weather-temperature").text(tempC);
-					$("#weather-temperature-unit").text("C");
-					$("#button-temperature-unit").text("F");
-				}
-			});
+			setWeatherFromPosition(latitude, longitude);
 		});
 	} else {
 		// Show some kind of error message since position isn't working
 	}
 
+	// City buttons
+	$("#berlin").click(function(event) {
+		setWeatherFromPosition(52.52, 13.38);
+	});
+
+	$("#abudhabi").click(function(event) {
+		setWeatherFromPosition(24.46, 54.36);
+	});
+
+	$("#sydney").click(function(event) {
+		setWeatherFromPosition(33.86, 151.21);
+	});
+
+	$("#lima").click(function(event) {
+		setWeatherFromPosition(12.04, 77.02);
+	});
+
+	$("#newyork").click(function(event) {
+		setWeatherFromPosition(40.71, 74.01);
+	});
+
+	// Change the unit
+	$("#unit-button").click(function(event) {
+		if (isCelciusActive) {
+			isCelciusActive = false;
+			$("#weather-temperature").text(tempF);
+			$("#weather-temperature-unit").text("F");
+			$("#button-temperature-unit").text("C");
+		} else {
+			isCelciusActive = true;
+			$("#weather-temperature").text(tempC);
+			$("#weather-temperature-unit").text("C");
+			$("#button-temperature-unit").text("F");
+		}
+	});
 
 });
