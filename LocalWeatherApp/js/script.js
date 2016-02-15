@@ -76,13 +76,13 @@ $(document).ready(function() {
 				case "Rain":
 				weatherIconDiv.html("<ul><li class='icon-basecloud icon-rainy'></li></ul>");
 				body.animate({
-					backgroundColor: "#82b2e4"},
+					backgroundColor: "#ABCCED"},
 					3000);
 				container.animate({
-					backgroundColor: "#82b2e4"},
+					backgroundColor: "#ABCCED"},
 					3000);
 				unitButton.animate({
-					backgroundColor: "#82b2e4"},
+					backgroundColor: "#ABCCED"},
 					3000);
 				break;
 				case "Snow":
@@ -100,13 +100,13 @@ $(document).ready(function() {
 				case "Clear":
 				weatherIconDiv.html("<ul><li class='icon-sun'></li></ul>");
 				body.animate({
-					backgroundColor: "rgb(255, 165, 0)"},
+					backgroundColor: "#FFD37F"},
 					3000);
 				container.animate({
-					backgroundColor: "rgb(255, 165, 0)"},
+					backgroundColor: "#FFD37F"},
 					3000);
 				unitButton.animate({
-					backgroundColor: "rgb(255, 165, 0)"},
+					backgroundColor: "#FFD37F"},
 					3000);
 				break;
 				case "Clouds":
@@ -147,9 +147,20 @@ $(document).ready(function() {
 		setWeatherFromPosition(52.52, 13.41);
 	});
 
-	$("#abudhabi").click(function(event) {
-		setWeatherFromPosition(24.46, 54.36);
-	});
+	$("#home").click(function(event) {
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(function(position) {
+				latitude = position.coords.latitude;
+				longitude = position.coords.longitude;
+				$("#latitude").text(position.coords.latitude);
+				$("#longitude").text(position.coords.longitude);
+
+				setWeatherFromPosition(latitude, longitude);
+			});
+		} else {
+		// Show some kind of error message since position isn't working
+	}
+});
 
 	$("#sydney").click(function(event) {
 		setWeatherFromPosition(-33.86, 151.21);

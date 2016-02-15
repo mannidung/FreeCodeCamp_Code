@@ -117,7 +117,7 @@ a {
 	font-family: 'iconvault';
 	font-size: 256px;
 	content: "\f113";
-	color: rgb(255, 165, 0);
+	color: #FFD37F;
 }
 
 .icon-cloud::after {
@@ -131,7 +131,7 @@ a {
 	font-family: 'iconvault';
 	font-size: 256px;
 	content: "\f104";
-	color:#82b2e4;
+	color:#ABCCED;
 	position: absolute;
 	margin-left: -250px;
 }
@@ -140,7 +140,7 @@ a {
 	font-family: 'iconvault';
 	font-size: 256px;
 	content: "\f107";
-	color:#82b2e4;
+	color:#ABCCED;
 	position: absolute;
 	margin-left: -250px;
 }
