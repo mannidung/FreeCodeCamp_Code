@@ -15,6 +15,7 @@
 <body>
 	<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+	<script src="js/script.js"></script>
 	<div class="container">
 		<div class="centered-helper">
 			<div class="content">
@@ -24,43 +25,46 @@
 					<span id="logo-text">WIKIPEDIA BROWSER</span>
 				</div>
 				<div class="random">
-					<button id="random">
-						Send me to a random article
-					</button>	
+					<a href="http://en.wikipedia.org/wiki/Special:Random" target="new">
+						<button id="random">
+							Send me to a random article
+						</button>	
+					</a>
 				</div>
 				<br>
 				<br>
 				<div class="search">
-					<input type="text" name="search" placeholder="I want to search for...">
-					<button>
+					<input id="search-text" type="text" name="search" placeholder="I want to search for...">
+					<button id="search-go">
 						GO</i>
 					</button>
 				</div>
 				<br>
 				<br>
-				<div class="results-container">
-					<div class="result-header-box">
-						<span class="result-header-text">Albert Einstein</span>
-						
-					</div>
-					<div class="result-content-box">
-						<span class="result-content-text">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat.
-						</span>
-						<span class="result-content-link">
+				<div id="results">
+					<div class="results-container">
+						<div class="result-header-box">
+							<span class="result-header-text">Albert Einstein</span>
 							<a href=""><i class="fa fa-external-link"></i>
 							</a>
-						</span>
+
+						</div>
+						<div class="result-content-box">
+							<span class="result-content-text">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat.
+							</span>
+							<span class="result-content-link">
+								<a href=""><i class="fa fa-external-link"></i>
+								</a>
+							</span>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </body>
-<!--
-<script src="js/script.js"></script>
--->
 </html>

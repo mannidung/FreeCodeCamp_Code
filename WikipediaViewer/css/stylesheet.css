@@ -60,7 +60,6 @@ button:focus {
 
 .content {
 	#position: relative;
-	#top: -50%;
 	margin:0 auto;
 	width:420px;
 	border-radius: 5%;
@@ -89,6 +88,10 @@ button:focus {
 	font-family: 'Playfair Display', serif;
 	color: rgba(0,0,0,0.6);
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+}
+
+.results {
+	margin-bottom: 20px;
 }
 
 .results-container {
