@@ -1,0 +1,64 @@
+td {
+	vertical-align: top;
+}
+
+#header {
+	height: 600px;
+	background-color: gray;
+}
+
+#about {
+	text-align: center;
+	margin: 25px;
+}
+
+#footer {
+	height: 60px;
+}
+
+#about-table {
+	margin: 0 auto;
+	width: 60%;
+	table-layout: fixed;
+	padding: 10px;
+}
+
+.td-text {
+	margin-left: 10px;
+	margin-right: 20px;
+}
+
+.portrait {
+	height: 300px;
+	width: 300px;
+	border-radius: 100%;
+	border-color: white;
+	border-style: solid;
+	border-width: 4px;
+	background-color: blue;
+	margin: 120 auto;
+	margin-bottom: 20;
+}
+
+.header-name {
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.header-separator {
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.header-text {
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.socialmedia-button {
+	margin-right: 4em;
+	margin-left: 4em;
+}
