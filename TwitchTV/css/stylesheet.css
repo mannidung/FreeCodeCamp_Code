@@ -1,3 +1,8 @@
+body {
+	background-color: #07202b;
+	color: #E2E2E2;
+}
+
 table {
 	width: 100%;
 	table-layout: fixed;
@@ -15,7 +20,7 @@ tr {
 
 .main-container {
 	padding-top: 20px;
-	width: 70%;
+	width: 60%;
 	margin: 0 auto;
 }
 
@@ -32,13 +37,13 @@ tr {
 
 .header-text {
 	text-align: center;
-	font-size: 40px;
+	font-size: 62px;
+	font-family: 'Sonsie One', cursive;
 }
 
 .body {
 	margin-top: 40px;
 	width: 100%;
-	background-color: white;
 }
 
 .streamer-avatar {
@@ -50,4 +55,16 @@ tr {
 	border-style: solid;
 	border-color: black;
 	border-width: 5px;
+	box-shadow: 0 0 6px #000000;
+}
+
+.streamer-name {
+	font-size: 24px;
+	font-family: 'Catamaran', sans-serif;
+	font-weight: 900;
+}
+
+.streamer-info {
+	margin-top: 10px;
+	font-family: 'Open Sans', sans-serif;
 }
