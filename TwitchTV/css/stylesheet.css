@@ -1,25 +1,28 @@
 table {
 	width: 100%;
-	text-align: center
+	table-layout: fixed;
+	text-align: center;
 }
 
 td {
 	padding: 20px;
+	vertical-align: top;
 }
 
+tr {
+	height: 200px;
+}
 
 .main-container {
 	padding-top: 20px;
-	width: 700px;
+	width: 70%;
 	margin: 0 auto;
-	background-color: red;
 }
 
 .header {
 	margin: 20px auto;
 	width: 100%;
 	height: 60px;
-	background-color: blue;
 	text-align: center;
 }
 
@@ -47,5 +50,4 @@ td {
 	border-style: solid;
 	border-color: black;
 	border-width: 5px;
-
 }
