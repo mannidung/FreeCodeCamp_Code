@@ -1,64 +1,183 @@
+/* General CSS */
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+	text-decoration: none;
+}
+
 td {
 	vertical-align: top;
 }
 
-#header {
-	height: 600px;
-	background-color: gray;
+/* Class controlled CSS */
+
+.about-header {
+	color: #0D1F2D;
+	font-family: 'Raleway', sans-serif;
+	font-size: 40px;
+	margin-bottom: 30px;
+	margin-top: 60px;
 }
 
-#about {
+.header {
+	background-color: #B5E8F7;
+	height: 650px;
+}
+
+.header-name {
+	color: #0D1F2D;
+	font-family: 'Raleway', sans-serif;
+	font-size: 48px;
+	font-weight: 700;
+	margin: 0 auto;
 	text-align: center;
-	margin: 25px;
+	width: 100%;
+}
+
+.header-separator {
+	margin: 0 auto;
+	text-align: center;
+	width: 100%;
+}
+
+.header-text {
+	color: #0D1F2D;
+	font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+	margin: 0 auto;
+	text-align: center;
+	width: 100%;
+}
+
+.portrait {
+	border-color: #9B885F;
+	border-radius: 100%;
+	border-style: solid;
+	border-width: 4px;
+	background-color: blue;
+	height: 300px;
+	margin: 120 auto;
+	margin-bottom: 20;
+	width: 300px;
+}
+
+.project {
+	height: 650px;
+}
+
+.project-header {
+	color: #9B885F;
+	font-family: 'Raleway', sans-serif;
+	font-size: 32px;
+	margin: 60 auto;
+	text-align: center;
+}
+
+.project-image {
+	width: 50%;
+}
+
+.project-table {
+	table-layout: fixed;
+	width: 80%;
+}
+
+.project-text {
+	color: #0D1F2D;
+	background-color: #B5E8F7;
+	border-radius: 0px;
+	border-color: #818d92;
+	font-family: 'Raleway', sans-serif;
+	font-size: 18px;
+	font-weight: 400;
+	margin: 20 auto;
+	opacity: 1.0;
+	padding: 30px;
+	width: 70%;
+}
+
+.socialmedia {
+	margin-bottom: 60px;
+	margin-top: 30px;
+}
+
+.socialmedia-button {
+	text-decoration: none;
+	margin-left: 4em;
+	margin-right: 4em;
+}
+
+.splitter-section {
+	background-color: black;
+	background-image: url('../img/background.jpg');
+	background-attachment: fixed;
+	height: 10px;	
+}
+
+.td-text {
+	font-family: 'Raleway', sans-serif;
+	margin-left: 10px;
+	margin-right: 20px;
+}
+
+
+/* ID controlled CSS */
+
+#about {
+	color: #0D1F2D;
+	margin: 60px;
+	text-align: center;
+}
+
+#about-table {
+	margin: 0 auto;
+	padding: 10px;
+	table-layout: fixed;
+	width: 60%;
 }
 
 #footer {
 	height: 60px;
 }
 
-#about-table {
-	margin: 0 auto;
-	width: 60%;
-	table-layout: fixed;
-	padding: 10px;
+#localWeatherApp {
+	background-attachment: fixed;
+	background-image: url('../img/localWeatherApp.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
 }
 
-.td-text {
-	margin-left: 10px;
-	margin-right: 20px;
+#pomodoro {
+	background-attachment: fixed;
+	background-image: url('../img/pomodoro.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
 }
 
-.portrait {
-	height: 300px;
-	width: 300px;
-	border-radius: 100%;
-	border-color: white;
-	border-style: solid;
-	border-width: 4px;
-	background-color: blue;
-	margin: 120 auto;
-	margin-bottom: 20;
+#twitchTV {
+	background-attachment: fixed;
+	background-image: url('../img/TwitchTV.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
 }
 
-.header-name {
-	width: 100%;
-	text-align: center;
-	margin: 0 auto;
+#wikipediaViewer {
+	background-attachment: fixed;
+	background-image: url('../img/wikipediaViewer.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 100%;
 }
 
-.header-separator {
-	width: 100%;
-	text-align: center;
-	margin: 0 auto;
-}
+/*
 
-.header-text {
-	width: 100%;
-	text-align: center;
-	margin: 0 auto;
-}
 
-.socialmedia-button {
-	margin-right: 4em;
-	margin-left: 4em;
+#wikipediaViewer {
+	background-attachment: fixed;
+	background-image: url('../img/wikipediaViewer.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
 }
+*/
