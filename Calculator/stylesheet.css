@@ -1,62 +1,103 @@
-input[type="text"] {
-	text-align: right;
-}
-
-.calculator-body {
-	margin: 50 0 0 10;
-	height: 380;
-	width: 240;
-	background-color: white;
-	border-style: solid;
-	border-width: 1px;
-	border-color: lightgray;
-	border-radius: 5%
-}
-
-.calculator-header {
-	padding-top: 10px;
-	padding-left: 15px;
-	height: 40px;
-}
-
-.calculator-window	{
-	margin-top: 10px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-}
-
-.button-row {
-	background-color: white;
-	margin: 10px;
-	height: 45px;
-}
-
-.button-area {
-	background-color: white;
-	margin-top: 12px;
-	margin-left: 10px;
-	margin-right: 10px;
-	margin-bottom: 10px;
-}
-
-.calculator-button {
-	background-color: white;
-	margin: 5 auto;
-	padding-top: 5px;
-	height: 35px;
-	width: 35px;
-	text-align: center;
-	border-radius: 100%;
-	border-width: 1px;
-	border-color: lightgray;
-	border-style: solid;
-}
-
-.calculator-button:hover {
+body {
 	background-color: lightgray;
 }
 
-#brand {
+.container {
+	display: table;
+	height: 100%;
+	position:absolute;
+	overflow: hidden;
+	width:100%;
+	background-color:  lightgray;
+}
+
+.centered-helper {
+	#position: absolute;
+	#top: 50%;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.content {
+	#position: relative;
+	#top: -50%;
+	margin:0 auto;
+	padding: 20px;
+	width:300px;
+	height: 450px;
+	border-top-right-radius: 15px;
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	background-color: white;
+	box-shadow: 3px 3px gray;
+}
+
+.logo {
+	font-family: 'Quicksand';
+	font-weight: 700;
 	font-size: 18px;
-	font-family: 'Bevan', cursive;
+	margin-top: 5px;
+	margin-left: 14px;
+	color: silver;
+}
+
+.window-container {
+	margin: 25 auto;
+	padding: 9px;
+	width: 85%;
+	background-color: lightgray;
+	border-top-right-radius: 2px;
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+	box-shadow: inset 0 0 1px black;
+}
+
+.window {
+	font-family: 'Roboto Mono';
+	margin: auto;
+	padding: 9px;
+	background-color: rgb(110,114,101);
+	width: 85%;
+	text-align: right;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	box-shadow: inset 0 0 1px black;
+}
+
+.button {
+	font-family: 'Comfortaa';
+	font-weight: 400;
+	background-color: rgb(196,195,192);
+	height: 50px;
+	line-height: 50px;
+	width: 50px;
+	border-radius: 100%;
+	text-align: center;
+	
+}
+
+
+.operator-button {
+	font-weight: 700;
+	background-color: rgb(204,222,248);
+}
+
+.clear-button {
+	font-weight: 700;
+	background-color: #993955;
+	height: 30px;
+	line-height: 30px;
+	width: 30px;
+	border-radius: 100%;
+	margin-top: 0px;
+	margin-left: 31px;
+}
+
+#buttons-table {
+	margin: 0 auto;
+	border-spacing: 20px;
 }
