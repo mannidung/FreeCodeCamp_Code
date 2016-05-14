@@ -58,6 +58,7 @@ body {
 	font-family: 'Roboto Mono';
 	margin: auto;
 	padding: 9px;
+	height: 30px;
 	background-color: rgb(110,114,101);
 	width: 85%;
 	text-align: right;
@@ -100,4 +101,8 @@ body {
 #buttons-table {
 	margin: 0 auto;
 	border-spacing: 20px;
+}
+
+#display-fullstring {
+	font-size: 13px;
 }

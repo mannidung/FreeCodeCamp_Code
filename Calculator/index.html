@@ -10,6 +10,9 @@
 </head>
 
 <body>
+	<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+	<script src="script.js"></script>
 	<div class="container">
 		<div class="centered-helper">
 			<div class="content">
@@ -18,65 +21,66 @@
 				</div>
 				<div class="window-container">
 					<div class="window">
-						123+12.56
+						<div id="display-fullstring">23</div>
+						<div id="display-current">123+12.56</div>
 					</div>
 				</div>
-				<div class="button clear-button">C</div>
+				<div class="button clear-button" id="button-clear">C</div>
 				<table id="buttons-table">
 					<tr id="buttons-row">
 						<td id="buttons-cell">
-							<div class="button number-button">7</div>
+							<div class="button number-button display-changer">7</div>
 						</td>
 						<td id="buttons-cell">
-							<div class="button number-button">8</div>
+							<div class="button number-button display-changer">8</div>
 						</td>
 						<td id="buttons-cell">
-							<div class="button number-button">9</div>
+							<div class="button number-button display-changer">9</div>
 						</td>
 						<td id="buttons-cell">
-							<div class="button operator-button">/</div>
-						</td>
-					</tr>
-					<tr id="buttons-row">
-						<td id="buttons-cell">
-							<div class="button number-button">4</div>
-						</td>
-						<td id="buttons-cell">
-							<div class="button number-button">5</div>
-						</td>
-						<td id="buttons-cell">
-							<div class="button number-button">6</div>
-						</td>
-						<td id="buttons-cell">
-							<div class="button operator-button">x</div>
+							<div class="button operator-button display-changer">/</div>
 						</td>
 					</tr>
 					<tr id="buttons-row">
 						<td id="buttons-cell">
-							<div class="button number-button">1</div>
+							<div class="button number-button display-changer">4</div>
 						</td>
 						<td id="buttons-cell">
-							<div class="button number-button">2</div>
+							<div class="button number-button display-changer">5</div>
 						</td>
 						<td id="buttons-cell">
-							<div class="button number-button">3</div>
+							<div class="button number-button display-changer">6</div>
 						</td>
 						<td id="buttons-cell">
-							<div class="button operator-button">-</div>
+							<div class="button operator-button display-changer">x</div>
 						</td>
 					</tr>
 					<tr id="buttons-row">
 						<td id="buttons-cell">
-							<div class="button number-button">.</div>
+							<div class="button number-button display-changer">1</div>
 						</td>
 						<td id="buttons-cell">
-							<div class="button number-button">0</div>
+							<div class="button number-button display-changer">2</div>
 						</td>
 						<td id="buttons-cell">
-							<div class="button operator-button">=</div>
+							<div class="button number-button display-changer">3</div>
 						</td>
 						<td id="buttons-cell">
-							<div class="button operator-button">+</div>
+							<div class="button operator-button display-changer">-</div>
+						</td>
+					</tr>
+					<tr id="buttons-row">
+						<td id="buttons-cell">
+							<div class="button operator-button display-changer">.</div>
+						</td>
+						<td id="buttons-cell">
+							<div class="button number-button display-changer">0</div>
+						</td>
+						<td id="buttons-cell">
+							<div class="button operator-button equals-button">=</div>
+						</td>
+						<td id="buttons-cell">
+							<div class="button operator-button display-changer">+</div>
 						</td>
 					</tr>
 				</table>
@@ -84,5 +88,4 @@
 		</div>
 	</div>
 </body>
-<!--<script type="text/javascript" src="script/script.js"></script> -->
 </html>
