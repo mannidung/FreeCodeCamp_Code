@@ -31,27 +31,20 @@ $(document).ready(function() {
 
 	// Clear button
 	$(".clear-button").click(function() {
-		fullDisplayArr = [0];
+		fullDisplayArr = [];
 		updateDisplay(fullDisplayArr);
 	});
 
 	// Equals button
 	$(".equals-button").click(function() {
+		fullDisplayArr.push(displayArr[0]);
 		fullDisplayArr = parseAndReturnValue(fullDisplayArr);
 		updateDisplay(fullDisplayArr);
 	});	
 });
 
 function parseAndReturnValue(arrayToParse) {
-	if (arrayToParse === [0]) {
-		console.log("String is 0");
-		return [3];
-	} else {
-		for (var i = arrayToParse.length - 1; i >= 0; i--) {
-			arrayToParse[i];
-		}
-		return[9999];
-	}
+	shuntingYard(arrayToParse);
 };
 
 function updateFullDisplay(fullDisplayArr) {
@@ -66,4 +59,35 @@ function updateDisplay(displayArr) {
 	//	displayString = displayString.substr(1);
 	//}
 	$("#display-current").text(displayArr.join(""));
+};
+
+function shuntingYard(calculatorArray) {
+	var operatorPrecedence = {
+		"x": 2,
+		"/": 2,
+		"+": 1,
+		"-": 1
+	};
+	var output = [];
+	var operators = [];
+	console.log(calculatorArray);
+	var numTokens = calculatorArray.length;
+	for (var i = 0; i < numTokens; i++) {
+		var thisToken = calculatorArray.shift();
+		
+		if ($.isNumeric(thisToken)) {
+			output.push(thisToken);
+		} else { // Token is operator
+			console.log(operatorPrecedence[thisToken]);
+			console.log(operatorPrecedence[operators[0]]);
+			while (operators.length > 1 && operatorPrecedence[thisToken] <= operatorPrecedence[operators[operators.length - 1]]) {
+				output.push(operators.pop());
+			}
+			operators.push(thisToken);
+		}
+	}
+	var numOperators = operators.length;
+	for (var i = 0; i < numOperators; i++) {
+		output.push(operators.pop());
+	}
 };

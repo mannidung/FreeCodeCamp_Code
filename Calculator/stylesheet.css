@@ -22,7 +22,7 @@ body {
 	#position: relative;
 	#top: -50%;
 	margin:0 auto;
-	padding: 20px;
+	padding: 30px;
 	width:300px;
 	height: 450px;
 	border-top-right-radius: 15px;
@@ -105,4 +105,8 @@ body {
 
 #display-fullstring {
 	font-size: 13px;
+}
+
+#display-current {
+	margin-bottom: 3px;
 }
