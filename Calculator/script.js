@@ -9,10 +9,16 @@ $(document).ready(function() {
 
 	// Click of button that changes full string
 	$(".operator-button").click(function() {
-		console.log($(this).html());
+		// Add what is currently shown in lower row if it is a number
+		if ($.isNumeric(displayArr[0])) {
+			fullDisplayArr.push(displayArr.join(""));
+		}
 
-		// Add what is currently shown in lower row
-		fullDisplayArr.push(displayArr.join(""));
+		// Make sure that two operators can't be added after another
+		var operator = $(this).html();
+		if (isOperator(fullDisplayArr[fullDisplayArr.length - 1])) {
+			fullDisplayArr.pop();
+		}
 
 		fullDisplayArr.push($(this).html());
 		updateFullDisplay(fullDisplayArr);
@@ -24,7 +30,6 @@ $(document).ready(function() {
 
 	// Click of button that changes full string
 	$(".number-button").click(function() {
-		console.log($(this).html());
 		displayArr.push($(this).html());
 		updateDisplay(displayArr);
 	});
@@ -32,33 +37,71 @@ $(document).ready(function() {
 	// Clear button
 	$(".clear-button").click(function() {
 		fullDisplayArr = [];
-		updateDisplay(fullDisplayArr);
+		displayArr = [];
+		// Update displays with 0
+		updateFullDisplay([0]);
+		updateDisplay([0]);
 	});
 
 	// Equals button
 	$(".equals-button").click(function() {
 		fullDisplayArr.push(displayArr[0]);
-		fullDisplayArr = parseAndReturnValue(fullDisplayArr);
-		updateDisplay(fullDisplayArr);
+		displayArr = parseAndReturnValue(fullDisplayArr.slice(0)); // Send in a clone to keep value of fullDisplayArr
+		updateFullDisplay(fullDisplayArr);
+		updateDisplay(displayArr);
 	});	
 });
 
 function parseAndReturnValue(arrayToParse) {
-	shuntingYard(arrayToParse);
+	return postfixAlg(shuntingYard(arrayToParse));
 };
 
 function updateFullDisplay(fullDisplayArr) {
-	//while(displayString[0] === '0') {
-	//	displayString = displayString.substr(1);
-	//}
 	$("#display-fullstring").text(fullDisplayArr.join(""));
 };
 
 function updateDisplay(displayArr) {
-	//while(displayString[0] === '0') {
-	//	displayString = displayString.substr(1);
-	//}
 	$("#display-current").text(displayArr.join(""));
+};
+
+function isOperator(character) {
+	if (character === "+" || character === "-" || character === "/" || character === "x") {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function postfixAlg(inputArr) {
+	var stack = [];
+	while(inputArr.length > 0) {
+		var currentItem = inputArr.shift();
+		if ($.isNumeric(currentItem)) {
+			stack.push(currentItem);
+		} else {
+			var result = 0;
+			var arg1 = parseInt(stack.pop());
+			var arg2 = parseInt(stack.pop());
+			switch(currentItem) {
+				case "+":
+				result = arg2 + arg1;
+				break;
+				case "-":
+				result = arg2 - arg1;
+				break;
+				case "x":
+				result = arg2 * arg1;
+				break;
+				case "/":
+				result = arg2 / arg1;
+				break;
+				default:
+				result = 0;
+			}
+			stack.push(result);
+		}
+	}
+	return stack;
 };
 
 function shuntingYard(calculatorArray) {
@@ -70,7 +113,6 @@ function shuntingYard(calculatorArray) {
 	};
 	var output = [];
 	var operators = [];
-	console.log(calculatorArray);
 	var numTokens = calculatorArray.length;
 	for (var i = 0; i < numTokens; i++) {
 		var thisToken = calculatorArray.shift();
@@ -78,11 +120,14 @@ function shuntingYard(calculatorArray) {
 		if ($.isNumeric(thisToken)) {
 			output.push(thisToken);
 		} else { // Token is operator
-			console.log(operatorPrecedence[thisToken]);
-			console.log(operatorPrecedence[operators[0]]);
-			while (operators.length > 1 && operatorPrecedence[thisToken] <= operatorPrecedence[operators[operators.length - 1]]) {
-				output.push(operators.pop());
+			if (operators.length > 0) {
+				console.log(operatorPrecedence[thisToken]);
+				console.log(operatorPrecedence[operators[0]]);
+				while (operators.length > 1 && operatorPrecedence[thisToken] <= operatorPrecedence[operators[operators.length - 1]]) {
+					output.push(operators.pop());
+				}
 			}
+			
 			operators.push(thisToken);
 		}
 	}
@@ -90,4 +135,5 @@ function shuntingYard(calculatorArray) {
 	for (var i = 0; i < numOperators; i++) {
 		output.push(operators.pop());
 	}
+	return output;
 };
