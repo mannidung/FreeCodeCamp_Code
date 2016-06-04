@@ -32,6 +32,7 @@ $(document).ready(function() {
 	$(".number-button").click(function() {
 		displayArr.push($(this).html());
 		updateDisplay(displayArr);
+		console.log(displayArr);
 	});
 
 	// Clear button
@@ -45,10 +46,13 @@ $(document).ready(function() {
 
 	// Equals button
 	$(".equals-button").click(function() {
-		fullDisplayArr.push(displayArr[0]);
+		fullDisplayArr.push(displayArr.join(""));
+		console.log(displayArr);
+		console.log(fullDisplayArr);
 		displayArr = parseAndReturnValue(fullDisplayArr.slice(0)); // Send in a clone to keep value of fullDisplayArr
 		updateFullDisplay(fullDisplayArr);
 		updateDisplay(displayArr);
+		fullDisplayArr = [];
 	});	
 });
 
@@ -80,8 +84,8 @@ function postfixAlg(inputArr) {
 			stack.push(currentItem);
 		} else {
 			var result = 0;
-			var arg1 = parseInt(stack.pop());
-			var arg2 = parseInt(stack.pop());
+			var arg1 = Number(stack.pop());
+			var arg2 = Number(stack.pop());
 			switch(currentItem) {
 				case "+":
 				result = arg2 + arg1;
@@ -105,9 +109,10 @@ function postfixAlg(inputArr) {
 };
 
 function shuntingYard(calculatorArray) {
+	console.log("ShuntingYard input: " + calculatorArray);
 	var operatorPrecedence = {
 		"x": 2,
-		"/": 2,
+		"/": 3,
 		"+": 1,
 		"-": 1
 	};
@@ -123,7 +128,7 @@ function shuntingYard(calculatorArray) {
 			if (operators.length > 0) {
 				console.log(operatorPrecedence[thisToken]);
 				console.log(operatorPrecedence[operators[0]]);
-				while (operators.length > 1 && operatorPrecedence[thisToken] <= operatorPrecedence[operators[operators.length - 1]]) {
+				while (operators.length >= 1 && operatorPrecedence[thisToken] < operatorPrecedence[operators[operators.length - 1]]) {
 					output.push(operators.pop());
 				}
 			}
@@ -135,5 +140,6 @@ function shuntingYard(calculatorArray) {
 	for (var i = 0; i < numOperators; i++) {
 		output.push(operators.pop());
 	}
+	console.log("shuntingYard output: " + output);
 	return output;
 };
