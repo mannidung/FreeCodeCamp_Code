@@ -32,7 +32,7 @@ $(document).ready(function() {
 	$(".number-button").click(function() {
 		displayArr.push($(this).html());
 		updateDisplay(displayArr);
-		console.log(displayArr);
+		//console.log(displayArr);
 	});
 
 	// Clear button
@@ -47,8 +47,8 @@ $(document).ready(function() {
 	// Equals button
 	$(".equals-button").click(function() {
 		fullDisplayArr.push(displayArr.join(""));
-		console.log(displayArr);
-		console.log(fullDisplayArr);
+		//console.log(displayArr);
+		//console.log(fullDisplayArr);
 		displayArr = parseAndReturnValue(fullDisplayArr.slice(0)); // Send in a clone to keep value of fullDisplayArr
 		updateFullDisplay(fullDisplayArr);
 		updateDisplay(displayArr);
