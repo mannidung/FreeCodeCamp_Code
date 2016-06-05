@@ -30,8 +30,15 @@ $(document).ready(function() {
 
 	// Click of button that changes full string
 	$(".number-button").click(function() {
-		displayArr.push($(this).html());
-		updateDisplay(displayArr);
+		// Avoid too long numbers
+		if (displayArr.length < 11) {
+			if ($(this).html() === "." && displayArr.indexOf('.') > -1) {
+				return;
+			}
+			displayArr.push($(this).html());
+			updateDisplay(displayArr);	
+		}
+		
 		//console.log(displayArr);
 	});
 
@@ -53,6 +60,7 @@ $(document).ready(function() {
 		updateFullDisplay(fullDisplayArr);
 		updateDisplay(displayArr);
 		fullDisplayArr = [];
+		displayArr = [];
 	});	
 });
 
