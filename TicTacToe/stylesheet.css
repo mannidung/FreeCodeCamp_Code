@@ -1,0 +1,51 @@
+body {
+	background-color: #533A71;
+}
+
+.container {
+	display: table;
+	height: 100%;
+	position:absolute;
+	overflow: hidden;
+	width:100%;
+	background-color:  #533A71;
+}
+
+.centered-helper {
+	#position: absolute;
+	#top: 50%;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.content {
+	#position: relative;
+	#top: -50%;
+	margin:0 auto;
+	padding: 30px;
+	width:450px;
+	height: 450px;
+	border-top-right-radius: 15px;
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	background-color: #9CEC5B;
+	box-shadow: 3px 3px gray;
+}
+
+#tictactoe {
+	background-color: #9CEC5B;
+	width: 450px;
+	height: 450px;
+}
+
+.tictactoe_row {
+	width: 450px;
+	height: 150px;
+	background-color: #279AF1;
+}
+
+.tictactoe_cell {
+	width: 150px;
+	text-align: center;
+}
