@@ -1,5 +1,5 @@
 body {
-	background-color: #533A71;
+	background-color: #D3F3EE;
 }
 
 .container {
@@ -8,7 +8,7 @@ body {
 	position:absolute;
 	overflow: hidden;
 	width:100%;
-	background-color:  #533A71;
+	background-color:  #D3F3EE;
 }
 
 .centered-helper {
@@ -29,7 +29,7 @@ body {
 	border-top-left-radius: 15px;
 	border-bottom-left-radius: 15px;
 	border-bottom-right-radius: 15px;
-	background-color: #9CEC5B;
+	background-color: #A7B0CA;
 	box-shadow: 3px 3px gray;
 }
 
@@ -39,7 +39,7 @@ body {
 
 .button {
 	font-family: 'Baloo Paaji', cursive;
-	background-color: #9CEC5B;
+	background-color: #A7B0CA;
 	border-top-right-radius: 15px;
 	border-top-left-radius: 15px;
 	border-bottom-left-radius: 15px;
@@ -54,7 +54,7 @@ body {
 }
 
 #tictactoe {
-	background-color: #9CEC5B;
+	background-color: #A7B0CA;
 	width: 450px;
 	height: 450px;
 }
@@ -62,7 +62,7 @@ body {
 .tictactoe_row {
 	width: 450px;
 	height: 150px;
-	background-color: #279AF1;
+	background-color: #8EDCE6;
 }
 
 .tictactoe_cell {
