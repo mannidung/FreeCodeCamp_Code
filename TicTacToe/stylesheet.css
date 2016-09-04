@@ -33,6 +33,26 @@ body {
 	box-shadow: 3px 3px gray;
 }
 
+.button_container {
+	text-align: center;
+}
+
+.button {
+	font-family: 'Baloo Paaji', cursive;
+	background-color: #9CEC5B;
+	border-top-right-radius: 15px;
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	box-shadow: 2px 2px gray;
+	margin:0 10 auto;
+	padding: 5px;
+}
+
+.button:hover {
+	background-color: #279AF1;
+}
+
 #tictactoe {
 	background-color: #9CEC5B;
 	width: 450px;
@@ -46,6 +66,13 @@ body {
 }
 
 .tictactoe_cell {
+	font-family: 'Indie Flower', cursive;
+	font-size: 80px;
 	width: 150px;
+	text-align: center;
+}
+
+.result {
+	font-family: 'Baloo Paaji', cursive;
 	text-align: center;
 }

@@ -10,43 +10,74 @@ var playField = {
 	"cell33": ""
 };
 
+var playerFunction = setCellToX;
+var computerFunction = setCellToO;
+var computerMoveMode = randomComputerMove;
+var computerVictories = 0;
+var playerVictories = 0;
+
 $(document).ready(function() {
-	
+
+	$(".button_switch").click(function() {
+		var tmp = playerFunction;
+		playerFunction = computerFunction;
+		computerFunction = tmp;
+		if (playerFunction === setCellToX) {
+			$(this).text("PLAY AS O");
+		} else {
+			$(this).text("PLAY AS X");
+		}
+		resetGame();
+	});
+
+	$(".button_reset").click(function() {
+		resetGame();
+	});
+
 	$('.tictactoe_cell').click(function() {
-		setCellToX($(this).attr('id'));
+		playerFunction($(this).attr('id'));
 		if (checkThreeInARow()) {
 			console.log("Player won!");
+			playerVictories++;
+			resetGame();
 			return;
 		}
-		computerMove();
+		computerMoveMode(computerFunction);
 		if (checkThreeInARow()) {
 			console.log("Computer won!");
+			computerVictories++;
+			resetGame();
 			return;
 		}
 	});
 
 });
 
-function computerMove () {
-	var i = Math.floor((Math.random() * 3) + 1);
-	var j = Math.floor((Math.random() * 3) + 1);
-	while (playField["cell" + i + j] != "") {
-		i = Math.floor((Math.random() * 3) + 1);
-		j = Math.floor((Math.random() * 3) + 1);
+function randomComputerMove (moveFunction) {
+	var keys = Object.keys(playField);
+	var freeSpaces = [];
+	console.log(keys);
+	for (var i = 0; i < keys.length; i++) {
+		if (playField[keys[i]] === "") {
+			freeSpaces.push(keys[i]);
+		}
 	}
-	setCellToO("cell" + i + j);
+	console.log(freeSpaces);
+	moveFunction(freeSpaces[Math.floor((Math.random() * freeSpaces.length))]);
 }
 
 function setCellToX (cellID) {
 	console.log(cellID);
 	playField[cellID] = "X";
-	$("#"+cellID).css("background-color", "black")
+	//$("#"+cellID).css("background-color", "black")
+	$("#"+cellID).text("X");
 }
 
 function setCellToO (cellID) {
 	console.log(cellID);
 	playField[cellID] = "O";
-	$("#"+cellID).css("background-color", "purple")
+	//$("#"+cellID).css("background-color", "purple")
+	$("#"+cellID).text("O");
 }
 
 function checkThreeInARow () {
@@ -91,4 +122,27 @@ function checkThreeInARow () {
 
 
 	return false;
+}
+
+function resetGame () {
+	playField = {
+		"cell11": "",
+		"cell12": "",
+		"cell13": "",
+		"cell21": "",
+		"cell22": "",
+		"cell23": "",
+		"cell31": "",
+		"cell32": "",
+		"cell33": ""
+	};
+	$("#playerVictories").text("PLAYER: " + playerVictories);
+	$("#computerVictories").text("COMPUTER: " + computerVictories);
+
+	for (var i = 1; i <= 3; i++) {
+		for (var j = 1; j <= 3; j++) {
+			$("#cell" + i + j).text("");
+		}
+	}
+
 }

@@ -3,6 +3,8 @@
 	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 	<meta content="utf-8" http-equiv="encoding">
 	<link rel="stylesheet" href="stylesheet.css">
+	<link href="https://fonts.googleapis.com/css?family=Baloo+Paaji" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 	<title>T3</title>
 </head>
 
@@ -12,24 +14,52 @@
 	<script src="script.js"></script>
 	<div class="container">
 		<div class="centered-helper">
+			<div class="button_container">
+				<span class="button button_switch">
+					&nbsp
+					PLAY AS O
+					&nbsp
+				</span>
+				<span class="button button_reset">
+					&nbsp
+					&nbsp
+					&nbsp
+					RESET
+					&nbsp
+					&nbsp
+					&nbsp
+				</span>
+				<div class="">
+					<br>
+				</div>
+			</div>
 			<div class="content">
 				<table id="tictactoe">
 					<tr class="tictactoe_row">
-						<td class="tictactoe_cell tictactoe_empty" id="cell11"></td>
-						<td class="tictactoe_cell tictactoe_empty" id="cell12"></td>
-						<td class="tictactoe_cell tictactoe_empty" id="cell13"></td>
+						<td class="tictactoe_cell" id="cell11"></td>
+						<td class="tictactoe_cell" id="cell12"></td>
+						<td class="tictactoe_cell" id="cell13"></td>
 					</tr>
 					<tr class="tictactoe_row">
-						<td class="tictactoe_cell tictactoe_empty" id="cell21"></td>
-						<td class="tictactoe_cell tictactoe_empty" id="cell22"></td>
-						<td class="tictactoe_cell tictactoe_empty" id="cell23"></td>
+						<td class="tictactoe_cell" id="cell21"></td>
+						<td class="tictactoe_cell" id="cell22"></td>
+						<td class="tictactoe_cell" id="cell23"></td>
 					</tr>
 					<tr class="tictactoe_row">
-						<td class="tictactoe_cell tictactoe_empty" id="cell31"></td>
-						<td class="tictactoe_cell tictactoe_empty" id="cell32"></td>
-						<td class="tictactoe_cell tictactoe_empty" id="cell33"></td>
+						<td class="tictactoe_cell" id="cell31"></td>
+						<td class="tictactoe_cell" id="cell32"></td>
+						<td class="tictactoe_cell" id="cell33"></td>
 					</tr>
 				</table>
+				<div class="result">
+					<span id="playerVictories">
+						PLAYER: 0
+					</span>
+					&nbsp&nbsp ---- &nbsp&nbsp
+					<span id="computerVictories">
+						COMPUTER: 0
+					</span>
+				</div>
 			</div>
 		</div>
 	</div>
