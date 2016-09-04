@@ -28,6 +28,9 @@ $(document).ready(function() {
 			$(this).text("PLAY AS X");
 		}
 		resetGame();
+		if (playerFunction === setCellToO){
+			computerMoveMode(computerFunction);
+		}
 	});
 
 	$(".button_reset").click(function() {
