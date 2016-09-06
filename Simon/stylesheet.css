@@ -1,0 +1,51 @@
+body {
+  background-color: gray;
+}
+
+.container {
+	display: table;
+	height: 100%;
+	position:absolute;
+	overflow: hidden;
+	width:100%;
+}
+
+.centered-helper {
+	#position: absolute;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#simon {
+  border-spacing: 40px;
+}
+
+.content {
+	#top: -50%;
+	margin:auto;
+
+}
+
+.simon_button {
+  margin: 5em;
+  height: 15em;
+  width: 15em;
+  background-color: green;
+  border-radius: 100%;
+}
+
+#button-red {
+  background-color: red;
+}
+
+#button-blue {
+  background-color: blue;
+}
+
+#button-green {
+  background-color: green;
+}
+
+#button-yellow {
+  background-color: yellow;
+}
