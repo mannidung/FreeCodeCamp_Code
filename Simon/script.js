@@ -72,8 +72,23 @@ $(document).ready(function() {
     f();
   };
 
+  function checkPlayerInput(id) {
+    var indexCheck = playerSequence.length;
+    console.log(sequence[indexCheck]);
+    if (id == sequence[indexCheck]) {
+      playerSequence.push(id);
+      addItemToSequence();
+      playSequence();
+      return true;
+    } else {
+      return false;
+    }
+    console.log(indexCheck);
+  };
+
   $(".button").click(function (event) {
-    var id = event.target.id;
+    var id = event.target.id[1];
+    checkPlayerInput(id);
     console.log(id);
   });
 
