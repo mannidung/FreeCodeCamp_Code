@@ -73,17 +73,19 @@ $(document).ready(function() {
   };
 
   function checkPlayerInput(id) {
-    var indexCheck = playerSequence.length;
-    console.log(sequence[indexCheck]);
-    if (id == sequence[indexCheck]) {
+    if (id == sequence[playerSequence.length]) {
       playerSequence.push(id);
-      addItemToSequence();
-      playSequence();
-      return true;
+      if (playerSequence.length == sequence.length) {
+        playerSequence = [];
+        addItemToSequence();
+        playSequence();
+        return true;
+      } else {
+
+      }
     } else {
-      return false;
+      playSequence();
     }
-    console.log(indexCheck);
   };
 
   $(".button").click(function (event) {
