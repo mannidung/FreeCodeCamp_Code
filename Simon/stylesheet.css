@@ -1,51 +1,66 @@
-body {
-  background-color: gray;
-}
-
 .container {
-	display: table;
-	height: 100%;
-	position:absolute;
-	overflow: hidden;
-	width:100%;
+  margin: auto;
+  width: 40%;
 }
 
-.centered-helper {
-	#position: absolute;
-	display: table-cell;
-	vertical-align: middle;
+.header {
+  width: 40%;
+  height: 7%;
+  background-color: #982649;
+  margin: auto;
 }
 
-#simon {
-  border-spacing: 40px;
+.square {
+  height: 40px;
+    float:left;
+    position: relative;
+    width: 45%;
+    padding-bottom: 45%; /* = width for a 1:1 aspect ratio */
+    margin:2.5%;
+    margin-bottom: -4%;
+    overflow:hidden;
 }
-
 .content {
-	#top: -50%;
-	margin:auto;
-
+    position:absolute;
+    height:80%; /* = 100% - 2*10% padding */
+    width:90%; /* = 100% - 2*5% padding */
+    padding: 10% 5%;
+}
+.table{
+    display:table;
+    height:100%;
+    width:100%;
+}
+.table-cell{
+    text-align: center;
+    display:table-cell;
+    vertical-align:middle;
+    height:100%;
+    width:100%;
 }
 
-.simon_button {
-  margin: 5em;
-  height: 15em;
-  width: 15em;
-  background-color: green;
+.button {
+  height: 100%;
+  width: 100%;
   border-radius: 100%;
 }
 
-#button-red {
-  background-color: red;
+#b1 {
+  opacity: 0.0;
+  background-color: #FF5964;
 }
 
-#button-blue {
-  background-color: blue;
+#b2 {
+  opacity: 0.0;
+  background-color: #35A7FF;
 }
 
-#button-green {
-  background-color: green;
+#b3 {
+  opacity: 0.0;
+  background-color: #6BF178;
 }
 
-#button-yellow {
-  background-color: yellow;
+#b4 {
+  opacity: 0.0;
+  background-color: #FFE74C;
 }
