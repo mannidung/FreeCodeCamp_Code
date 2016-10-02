@@ -6,7 +6,6 @@
 .header {
   width: 40%;
   height: 7%;
-  background-color: #982649;
   margin: auto;
 }
 
@@ -50,9 +49,19 @@
   background-color: #FF5964;
 }
 
+#b1:active {
+  opacity: 0.0;
+  background-color: #bb494d;
+}
+
 #b2 {
   opacity: 0.0;
   background-color: #35A7FF;
+}
+
+#b2:active {
+  opacity: 0.0;
+  background-color: #277fc3;
 }
 
 #b3 {
@@ -60,7 +69,17 @@
   background-color: #6BF178;
 }
 
+#b3:active {
+  opacity: 0.0;
+  background-color: #4aa353;
+}
+
 #b4 {
   opacity: 0.0;
   background-color: #FFE74C;
+}
+
+#b4:active {
+  opacity: 0.0;
+  background-color: #b09f33;
 }

@@ -3,6 +3,8 @@ var timeoutLength = 2*animationLength;
 
 var sequence = [];
 var playerSequence = [];
+var clickAllowed = false;
+var easy = true;
 
 
 $(document).ready(function() {
@@ -13,6 +15,7 @@ $(document).ready(function() {
   function addItemToSequence() {
     var index = Math.floor(Math.random() * (4 - 1 + 1)) + 1;
     sequence.push(index);
+    setScore(sequence.length - 1);
   }
 
   /* Button colors */
@@ -23,8 +26,7 @@ $(document).ready(function() {
 
   function buttonsChangeVisibility(opacity) {
     for (var i = 1; i <= 4; i++) {
-      $("#b" + i).animate(
-      {
+      $("#b" + i).animate({
         "opacity" : opacity
       }, animationLength);
     }
@@ -32,25 +34,50 @@ $(document).ready(function() {
 
   function makeVisible() {
     buttonsChangeVisibility(1.0);
+    clickAllowed = true;
   }
 
   function makeInvisible() {
+    clickAllowed = false;
     buttonsChangeVisibility(0.0);
+  }
+
+  function setScore(score) {
+    $("#score").text(score);
+  }
+
+  function reset() {
+    sequence = [];
+    playerSequence = [];
+    setScore(0);
+    addItemToSequence();
+    clickAllowed = true;
+  }
+
+  function errorClick() {
+    $("body").animate({
+      "background-color": "red"
+    }, 75).animate({
+      "background-color": "white"
+    }, 75).animate({
+      "background-color": "red"
+    }, 75).animate({
+      "background-color": "white"
+    }, 75);
   }
 
   function animateButton(buttonName, toneSource) {
     tone.setAttribute('src', toneSource);
     tone.play();
-    $(buttonName).animate(
-    {
+    $(buttonName).animate({
       "opacity" : 1.0
-    },
-    animationLength).animate({
+    },animationLength).animate({
       "opacity" : 0.0
     }, animationLength);
   };
 
   function playSequence() {
+    clickAllowed = false;
     makeInvisible();
     // Create a queue
     var i = 0;
@@ -72,7 +99,7 @@ $(document).ready(function() {
     f();
   };
 
-  function checkPlayerInput(id) {
+  function checkPlayerInputEasy(id) {
     if (id == sequence[playerSequence.length]) {
       playerSequence.push(id);
       if (playerSequence.length == sequence.length) {
@@ -80,44 +107,78 @@ $(document).ready(function() {
         addItemToSequence();
         playSequence();
         return true;
-      } else {
-
       }
     } else {
+      errorClick();
+      playSequence();
+    }
+  };
+
+  function checkPlayerInputHard(id) {
+    if (id == sequence[playerSequence.length]) {
+      playerSequence.push(id);
+      if (playerSequence.length == sequence.length) {
+        playerSequence = [];
+        addItemToSequence();
+        playSequence();
+        return true;
+      }
+    } else {
+      errorClick();
+      reset();
       playSequence();
     }
   };
 
   $(".button").click(function (event) {
-    var id = event.target.id[1];
-    checkPlayerInput(id);
-    console.log(id);
+    if (clickAllowed) {
+      var id = event.target.id[1];
+      checkPlayerFunction(id);
+      console.log(id);
+    } else {
+      console.log("Click not allowed");
+    }
+
   });
 
-  $("#add").click(function () {
-    console.log("============");
-    console.log("Adding item to sequence");
-    addItemToSequence();
-    console.log("Item added. Sequence is now:");
-    console.log(sequence);
-    console.log("============");
+  $("#start").click(function () {
+    if (clickAllowed) {
+      playSequence();
+    }
   });
 
-  $("#play").click(function () {
-    console.log("Playing sequence");
-    playSequence();
+  $("#reset").click(function () {
+    if (clickAllowed) {
+      reset();
+    }
   });
 
-  /*
-  animateButton("#button-1", "https://s3.amazonaws.com/freecodecamp/simonSound1.mp3");
-  animateButton("#button-2", "https://s3.amazonaws.com/freecodecamp/simonSound2.mp3");
-  animateButton("#button-3", "https://s3.amazonaws.com/freecodecamp/simonSound3.mp3");
-  animateButton("#button-4", "https://s3.amazonaws.com/freecodecamp/simonSound4.mp3");
-  */
+  $("#replay").click(function () {
+    if (clickAllowed) {
+      console.log("Playing sequence");
+      playSequence();
+    }
+  });
 
-  //animateButton("#button-1", "https://s3.amazonaws.com/freecodecamp/simonSound1.mp3");
+  $("#easy_hard").click(function () {
+    if (clickAllowed) {
+      if (easy) {
+        easy = false;
+        checkPlayerFunction = checkPlayerInputHard;
+        $("#easy_hard").text("Switch to easy");
+        reset();
+      } else {
+        easy = true;
+        checkPlayerFunction = checkPlayerInputEasy;
+        $("#easy_hard").text("Switch to hard");
+        reset();
+      }
+    }
+  });
 
-  //playSequence();
+  var checkPlayerFunction = checkPlayerInputEasy;
   makeVisible();
+  addItemToSequence();
+
 
 });
