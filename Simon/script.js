@@ -5,6 +5,7 @@ var sequence = [];
 var playerSequence = [];
 var clickAllowed = false;
 var easy = true;
+var winLimit = 20;
 
 
 $(document).ready(function() {
@@ -15,14 +16,8 @@ $(document).ready(function() {
   function addItemToSequence() {
     var index = Math.floor(Math.random() * (4 - 1 + 1)) + 1;
     sequence.push(index);
-    setScore(sequence.length - 1);
+    setScore(sequence.length);
   }
-
-  /* Button colors */
-  var red = "#FF5964";
-  var blue = "#35A7FF";
-  var green = "#6BF178";
-  var yellow = "#FFE74C";
 
   function buttonsChangeVisibility(opacity) {
     for (var i = 1; i <= 4; i++) {
@@ -52,18 +47,33 @@ $(document).ready(function() {
     setScore(0);
     addItemToSequence();
     clickAllowed = true;
+    playSequence();
   }
 
-  function errorClick() {
-    $("body").animate({
-      "background-color": "red"
-    }, 75).animate({
-      "background-color": "white"
-    }, 75).animate({
-      "background-color": "red"
-    }, 75).animate({
-      "background-color": "white"
-    }, 75);
+  function winAnimation() {
+    $("#error_message").text("YOU WON!");
+    $("#error_message").animate({
+      "color": "green"
+    }, 250).animate({
+      "color": "white"
+    }, 250).animate({
+      "color": "green"
+    }, 250).animate({
+      "color": "white"
+    }, 250);
+  }
+
+  function errorAnimation() {
+    $("#error_message").text("WRONG BUTTON");
+    $("#error_message").animate({
+      "color": "red"
+    }, 250).animate({
+      "color": "white"
+    }, 250).animate({
+      "color": "red"
+    }, 250).animate({
+      "color": "white"
+    }, 250);
   }
 
   function animateButton(buttonName, toneSource) {
@@ -102,14 +112,17 @@ $(document).ready(function() {
   function checkPlayerInputEasy(id) {
     if (id == sequence[playerSequence.length]) {
       playerSequence.push(id);
-      if (playerSequence.length == sequence.length) {
+      if (playerSequence.length >= winLimit) {
+        reset();
+        winAnimation();
+        return;
+      } else if (playerSequence.length == sequence.length) {
         playerSequence = [];
         addItemToSequence();
         playSequence();
-        return true;
       }
     } else {
-      errorClick();
+      errorAnimation();
       playSequence();
     }
   };
@@ -117,14 +130,18 @@ $(document).ready(function() {
   function checkPlayerInputHard(id) {
     if (id == sequence[playerSequence.length]) {
       playerSequence.push(id);
-      if (playerSequence.length == sequence.length) {
+      if (playerSequence.length >= winLimit) {
+        reset();
+        winAnimation();
+        return;
+      } else if (playerSequence.length == sequence.length) {
         playerSequence = [];
         addItemToSequence();
         playSequence();
         return true;
       }
     } else {
-      errorClick();
+      errorAnimation();
       reset();
       playSequence();
     }
@@ -179,6 +196,7 @@ $(document).ready(function() {
   var checkPlayerFunction = checkPlayerInputEasy;
   makeVisible();
   addItemToSequence();
+  playSequence();
 
 
 });

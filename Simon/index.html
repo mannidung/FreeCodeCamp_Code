@@ -4,6 +4,7 @@
 	<meta content="utf-8" http-equiv="encoding">
 	<link rel="stylesheet" href="stylesheet.css">
 	<title>Sajmon</title>
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 </head>
 
 <body>
@@ -11,11 +12,13 @@
 	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 	<script src="script.js"></script>
 	<div class="header">
-		<span id="start">Start</span> |
-		<span id="reset">Reset</span> |
-		<span id="replay">Replay last</span> |
-		<span id="easy_hard">Switch to hard</span> |
-		<span id="scoreBoard">Score: <span id="score">0</span></span>
+		<span class="topRow" id="start">Start</span>
+		<span class="topRow" id="reset">Reset</span>
+		<span class="topRow" id="replay">Replay last</span>
+		<span class="topRow" id="easy_hard">Switch to hard</span>
+		<br>
+		<br>
+		<span class="score" id="scoreBoard">Count: <span id="score">1</span></span>
 	</div>
 	<div class="container">
 		<div class="square">
@@ -58,6 +61,7 @@
 				</div>
 			</div>
 		</div>
+		<span id="error_message">WRONG BUTTON</span>
 	</div>
 </body>
 </html>
